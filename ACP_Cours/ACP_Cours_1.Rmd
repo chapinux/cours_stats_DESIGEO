@@ -1,0 +1,211 @@
+---
+title: "Analyse en Composantes Principales"
+author: "M2 IGAST / Mastère DESIGEO"
+date: "2021-2022"
+output: 
+  revealjs::revealjs_presentation:
+    theme: sky 
+    transition: fade
+    center: true
+  reveal_options:
+    slideNumber: true
+    previewLinks: true
+self_contained: true
+css : style.css
+---
+  
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,fig.width =6,fig.align="center", fig.height = 3)
+library(knitr)
+library(xtable)
+```
+
+# Introduction 
+
+# Dans les cours précédents ... 
+
+<br>
+
+Techniques pour quantifier la liaison entre **2** variables (quali ou quanti). 
+
+<br>
+
+$\chi^2$ , corrélation linéaire, régression linéaire
+
+# Motivation
+
+La plupart des phénomènes intéressants (sociaux, spatiaux) sont **multi-factoriels**. Les données disponibles pour les décrire sont
+
+<br>
+
+$\rightarrow$ Partiellement **redondantes**  :   e.g. revenu et profession
+<br>
+$\rightarrow$ Intrinsèquement **corrélées** : e.g. revenu et taille du logement
+<br>
+$\rightarrow$ Parfois des **proportions** (somme à 1 ou 100%)
+<br>
+
+
+# Quoi et comment ?
+
+<br>
+L'Analyse **factorielle**  cherche à réduire la **colinéarité** et le **nombre de dimensions** (=variables) qui décrivent une population ... 
+
+<br>
+
+... en proposant de nouvelles variables **composites décorrélées ** 
+
+
+# Plusieurs dimensions
+
+<span class="align_horiz_verti">
+<img  src="./couverts.png">
+</span>
+
+# Dimension "composite"
+
+<span class="align_horiz_verti">
+<img src="./spork.jpeg" />
+</span>
+
+# 
+
+<span class="align_horiz_verti">
+
+Comment **constituer** ces **nouvelles** dimensions composites ?
+</span>
+
+# L'inertie 
+
+<br>
+
+L'inertie est l'équivalent **multi-dimensionnel** de la **variance** d'une variable.
+
+
+C'est une notion centrale de l'ACP.
+
+<br>
+$I= \frac{1}{n}\sum_{i=1}^n d(x_i,g)$
+<br><br>
+<small>
+Avec :<br>
+- $n$ la taille de la population <br>
+- $x_i$ la valeur de la variable de l'individu $i$ <br>
+- $g$ le point moyen<br>
+- $d(x,y)$ une distance <br>
+
+</small>
+
+
+# L'inertie
+
+<br><br>
+L'inertie quantifie la **dispersion** du nuage de points
+
+C'est la **somme** des variances des variables
+
+Inertie faible : peu de variété dans les variables, individus semblables  $\rightarrow$ faible quantité d'information
+
+
+
+# L'inertie (1D)
+
+<br><br><br>
+en 1D , l'inertie est la **variance** : 
+<br>
+<br>
+$$I= \frac{1}{n}\sum_{i=1}^n (x_i-\bar{x})^2$$
+<br>
+<small>
+le point moyen a pour "coordonnées" $\bar{x}$
+</small>
+
+
+
+# L'inertie (2D)
+<br>
+Soient $x$ et $y$ deux variables qui décrivent des individus $p_i$ de la population $P$, et $g$ le point (individu)  moyen de cette population.
+
+<br>
+L'inertie de $P$ est :  $$I= \frac{1}{n}\sum_{i=1}^n (x_i-x_g)^2 + (y_i-y_g)^2$$
+
+On reconnaît une somme de variances : $I=var(x)+var(y)$
+
+
+
+# L'inertie (nD)
+Soient  $v$ variables , notées $x^{(k)}, k \in \{1,\dots,v\}$ qui décrivent les individus d'une population $P$, le point moyen de $P$ est noté $g$.
+
+L'inertie de $P$ est :  $$I= \frac{1}{n}\sum_{k=1}^v\sum_{i=1}^n (x_i^{(k)}-x^{(k)}_g)^2$$
+
+<small>on reconnaît :</small>$$I= \sum_{k=1}^v var(x^{(k)})$$
+
+# Espaces, vecteurs, axes, variables.
+
+
+Une population statistique $P$ est décrite par plusieurs variables continues.
+
+
+Ces variables définissent un **espace vectoriel** : un individu y est un **vecteur** , la valeur de ses variables sont les **coordonnées** du vecteur dans cet espace. 
+
+
+Chaque variable est une **dimension** de cet espace vectoriel.
+
+
+
+Ces variables sont (potentiellement) **corrélées**.
+
+
+# Explicitation de l'ACP
+
+
+L'ACP consiste à trouver des **axes** indépendants (orthogonaux entre eux), qui capturent le **plus d'inertie possible** de la population $P$.
+
+
+
+# Explicitation de l'ACP
+
+
+Les **axes** sont les **vecteurs propres** de la matrice de corrélation de $P$.
+On peut les calculer ! (ouf)
+
+l'ACP est le calcul d’une **transformation** linéaire qui re-projette des
+vecteurs-individus et des vecteurs-variables dans un nouvel **espace**, constitué par les **axes**.
+
+
+En général on choisit $\#axes < \#dimensions$ pour **réduire la dimensionalité** 
+
+
+# A
+
+ 
+
+
+
+
+# Contributions des individus 
+
+Chaque individu contribue à l'inertie de P, on peut 
+
+
+# Qualité de la représentation
+
+
+# Nouveaux individus 
+
+
+# Normaliser ou pas ? 
+
+
+
+C'est un **choix de modélisation** : 
+
+- si l'on ne réduit pas le nuage : une variable à forte variance va « tirer » tout l'effet de l'ACP à elle ;
+- si l'on réduit le nuage : une variable qui n'est qu'un bruit va se retrouver avec une variance apparente égale à une variable informative.
+
+Si les variables aléatoires sont dans des unités différentes, la réduction est obligatoire. 
+
+
+<small> Tiré de la page ACP de wikipédia</small>
+
