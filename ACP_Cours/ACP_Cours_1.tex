@@ -8,14 +8,18 @@
 \title{Analyse en Composantes Principales}
 \subtitle{}
 \date{2021-2022}
-\author{Paul Chapron \& Yann Ménéroux}
-\institute{IGN-ENSG-UGE}
+\author{Paul Chapron \textsuperscript{1} \& Yann Ménéroux \textsuperscript{1}}
+\institute{ \textsuperscript{1}IGN-ENSG-UGE}
 
 
 
 %definition de la couleur du texte dans la balise \alert{}
-\definecolor{vertIGN}{HTML}{96C31E} % vert IGN
+\definecolor{vertIGN}{HTML}{96C31E} % vert IGN %vrai valeur #97BE0D
 \setbeamercolor{alerted text}{fg=vertIGN}
+
+\definecolor{grisIGN}{HTML}{22292F} % Gris IGN tiré vers le noir 
+\setbeamercolor{background canvas}{bg=grisIGN}
+
 
 
 
@@ -116,7 +120,7 @@ L'analyse \alert{factorielle}  cherche à réduire la \alert{colinéarité} et l
 \begin{frame}{Dimensions "composites"}
 
 
-Existe-t-il des combinaisons  qui résument bien les caractéristiques des pokemons ? (Moins de six!)
+Existe-t-il des combinaisons qui \alert{résument bien} les caractéristiques des pokemons ? (moins de six!)
 
 \medskip \medskip
 
@@ -124,7 +128,7 @@ Comment les constituer ?
 
 \medskip \medskip
 
-i.e. comment combiner les six variables numériques pour bien expliquer leur variation au sein de la population ? 
+i.e. comment \alert{combiner} les six variables numériques pour bien \alert{expliquer leur variation} au sein de la population ? 
 
 
 
@@ -154,7 +158,7 @@ L'inertie est l'équivalent \alert{multi-dimensionnel} de la \alert{variance} d'
 C'est une notion centrale de l'ACP.
 
 
-$$I= \frac{1}{n}\sum_{i=1}^n d(x_i,g)$$
+$$I= \frac{1}{n}\sum_{i=1}^n d^2(x_i,g)$$
 
 Avec 
 \begin{itemize}
@@ -168,10 +172,9 @@ Avec
 
 \begin{frame}{L'inertie}
 
-
 L'inertie quantifie la \alert{dispersion} du nuage de points
 
-C'est la \alert{somme des variances} des variables
+L'inertie est la "moyenne du carré des distances", ou encore la \alert{somme des variances} des variables
 
 Inertie faible $\implies$ peu de variété dans les variables, individus semblables, faible quantité d'information
 \end{frame}
@@ -194,7 +197,7 @@ Le point moyen a pour "coordonnées" $\bar{x}$
 \begin{frame}{L'inertie en 2D}
 
 
-Soient $X$ et $Y$ deux variables qui décrivent des individus $p_i$ de la population $P$, et $g=(x_g,y_g)$ le point (individu)  moyen de cette population de coordonnées $\bar{x}$ et $\bar{y}$.
+Soient $X$ et $Y$ deux variables qui décrivent des individus $p_i$ de la population $P$, et $g=(x_g,y_g)$ le point moyen de cette population, de coordonnées $x_g=\bar{x}$ et $y_g=\bar{y}$.
 
 
 L'inertie de $P$ est :  $$I= \frac{1}{n}\sum_{i=1}^n (x_i-x_g)^2 + (y_i-y_g)^2$$
@@ -220,7 +223,7 @@ on reconnaît $$I= \sum_{k=1}^v var(X^{(k)})$$
 
 
 \begin{frame}{Individus dans l'espace d'origine}
-L'ACP considère une population statistique décrite par plusieurs variables continues.
+L'ACP considère une population statistique décrite par plusieurs variables (continues).
 
 
 Ces variables définissent un \alert{espace vectoriel} , qu'on va appeler l'espace d'\alert{origine}: 
@@ -230,9 +233,29 @@ Ces variables définissent un \alert{espace vectoriel} , qu'on va appeler l'espa
 	\item chaque variable est une \alert{dimension} de cet espace. elle définit un \alert{axe} de l'espace. (cf. axe des $x$ dans un repère orthonormé)
 \end{itemize}
 
-Les variables étant potentiellement \alert{corrélées}, les axes ne sont pas toujours orthogonaux ! 
+Les variables étant potentiellement \alert{corrélées}, les axes de l'espace de départ ne sont pas toujours (presque jamais) orthogonaux ! 
+
 
 \end{frame}
+
+
+
+\section{Espaces, vecteurs, axes, variables}
+
+
+\begin{frame}{Individus dans l'espace d'origine}
+
+Les individus sont des vecteurs dans l'espace des variables 
+
+
+\medskip mais également \medskip
+
+Les variables sont des vecteurs dans l'espace des individus 
+
+
+\end{frame}
+
+
 
 
 
@@ -242,27 +265,64 @@ Les variables étant potentiellement \alert{corrélées}, les axes ne sont pas t
 L'ACP consiste à trouver de  \alert{nouveaux axes orthogonaux entre eux}, qui capturent le \alert{plus d'inertie possible} de la population $P$.
 
 
-On trouve ces axes en combinant (linéairement), les variables de la population $P$ : e.g. 
+Ces axes définiront un nouvel espace : l'\alert{espace d'arrivée}
 
-$$ axe = \alpha X + \beta Y + \gamma Z $$ 
 
-L'algèbre linéaire nous donne la composition de ces combinaisons (les valeurs de $\alpha, \beta, \gamma$) pour chaque des nouveaux axes
+On trouve ces axes en combinant (linéairement), les variables de la population $P$, par exemple :
+
+$$ axe_1 = \alpha X + \beta Y + \gamma Z $$ 
+
+La composition de ces combinaisons (les valeurs de $\alpha, \beta, \gamma$) pour chaque axe est donnée en resolvant un système d'équations algébriques 
 \end{frame}
 
 
 
 \begin{frame}{Exemple en 2D}
 
+Espace de départ  
 
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/exemple_2D.png}
 
 \end{frame}
 
 
+\begin{frame}{Exemple en 2D}
+
+Espace de départ + Les axes de l'espace d'arrivée
+
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/exemple_2D_axes.png}
+
+\end{frame}
+
+
+\begin{frame}{Exemple en 2D}
+
+Espace d'arrivée 
+
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/exemple_2D_arrivee.png}
+
+\end{frame}
+
+
+\begin{frame}{Exemple en 2D}
+
+Espace d'arrivée + les axes de l'espace de départ
+
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/exemple_2D_arrivee_axes.png}
+
+\end{frame}
+
+
+
+
 \begin{frame}
-TODO SCHEMA
 
 
-espace de départ -> ACP -> espace d'arrivée 
+espace de départ $\rightarrow$ ACP $\rightarrow$ espace d'arrivée 
 
 \end{frame}
 
@@ -271,8 +331,8 @@ espace de départ -> ACP -> espace d'arrivée
 
 \begin{frame}{Calcul des axes}
 
-Les \alert{axes} sont les \alert{vecteurs propres} de la matrice de corrélation de $P$. 
-On peut les calculer ! (ouf)
+Les \alert{axes} sont les \alert{vecteurs propres} de la matrice de corrélation de $P$, $C_P$. 
+On peut les calculer (ouf !)
 
 \medskip
 
@@ -289,6 +349,16 @@ On appelle ces axes \alert{composantes}, elles sont \alert{linéairement indépe
 
 
 \begin{frame}{Nombres de composantes et inertie}
+
+L'ACP capture l'intertie de $P$ en créant des composantes (les vecteurs propres de  $C_P$). 
+Il y a autant de composantes possibles que de dimensions de l'espace de départ. 
+
+
+La première composante est la composante correspondant au vecteur propre de la plus grande valeur propre
+
+La seconde composante est la composante correspondant au vecteur propre de la seconde plus grande valeur propre 
+
+[...]
 
 
 
@@ -332,12 +402,10 @@ De cette projection on tire beaucoup d'information utiles:
 
 
 
+\section{Interpréter les résultats d'une ACP}
 
 \begin{frame}{L'espace d'arrivée}
 
-Contributions/ représentation  des variables 
-
-Contribution / représentation des individus 
 
 \end{frame}
 
