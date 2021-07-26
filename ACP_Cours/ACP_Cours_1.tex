@@ -1,5 +1,7 @@
 \documentclass{beamer}
 
+\usepackage{setspace}
+
 % config du thgeme metropolis
 \usetheme[progressbar=frametitle,block=fill, titleformat=smallcaps,sectionpage=progressbar,]{metropolis}
 
@@ -239,10 +241,6 @@ Les variables étant potentiellement \alert{corrélées}, les axes de l'espace d
 \end{frame}
 
 
-
-\section{Espaces, vecteurs, axes, variables}
-
-
 \begin{frame}{Individus dans l'espace d'origine}
 
 Les individus sont des vecteurs dans l'espace des variables 
@@ -272,7 +270,7 @@ On trouve ces axes en combinant (linéairement), les variables de la population 
 
 $$ axe_1 = \alpha X + \beta Y + \gamma Z $$ 
 
-La composition de ces combinaisons (les valeurs de $\alpha, \beta, \gamma$) pour chaque axe est donnée en resolvant un système d'équations algébriques 
+La composition de ces combinaisons (les valeurs de $\alpha, \beta, \gamma$) pour chaque axe est donnée en résolvant un système d'équations algébriques 
 \end{frame}
 
 
@@ -331,7 +329,7 @@ espace de départ $\rightarrow$ ACP $\rightarrow$ espace d'arrivée
 
 \begin{frame}{Calcul des axes}
 
-Les \alert{axes} sont les \alert{vecteurs propres} de la matrice de corrélation de $P$, $C_P$. 
+Les \alert{axes} sont les \alert{vecteurs propres} de la matrice de corrélation de $P$, $Cor_P$. 
 On peut les calculer (ouf !)
 
 \medskip
@@ -340,9 +338,6 @@ l'ACP est le calcul d’une transformation linéaire qui \alert{re-projette} des
 
 \medskip
 
-En général on choisit $\#axes < \#dimensions$ pour \alert{réduire la dimensionnalité} 
-
-
 On appelle ces axes \alert{composantes}, elles sont \alert{linéairement indépendantes} et forment une \alert{base} de l'espace d'arrivée.
 \end{frame}
 
@@ -350,32 +345,148 @@ On appelle ces axes \alert{composantes}, elles sont \alert{linéairement indépe
 
 \begin{frame}{Nombres de composantes et inertie}
 
-L'ACP capture l'intertie de $P$ en créant des composantes (les vecteurs propres de  $C_P$). 
+L'ACP capture l'inertie de $P$ en créant des composantes (les vecteurs propres de  $Cor_P$). 
+
+\medskip
+
 Il y a autant de composantes possibles que de dimensions de l'espace de départ. 
 
-
-La première composante est la composante correspondant au vecteur propre de la plus grande valeur propre
-
-La seconde composante est la composante correspondant au vecteur propre de la seconde plus grande valeur propre 
-
-[...]
+\medskip  
 
 
+L'intérêt de l'ACP est de pouvoir se limiter à \alert{quelques} composantes  pour à la fois 
+\begin{itemize}
+\item  capturer suffisamment l'inertie ($\approx$ l'information) de $P$
+\item  réduire la dimensionnalité ($\approx$ complexité) de $P$
+\end{itemize}
 
 \end{frame}
-
-
 
 
 \begin{frame}{Nombres de composantes et inertie}
 
 
-Gavish \& Donoho (2014) present a long overdue result on this problem and their answer is surprisingly simple and concrete. Essentially, the optimal procedure boils down to estimating the noise in the dataset, $\sigma$ , and then throwing away all components whose singular values are below a specified threshold. For a square $n \times n$  matrix, this threshold is:
+L'inertie capturée par une composante $k$ est sa valeur propre , $\lambda_k$
 
-$$\lambda = \frac{4 \sigma \sqrt{n}}{\sqrt{3}}$$
+On ordonne les composantes par valeur propre décroissantes:
+
+La 1\textsuperscript{ère} composante correspond au vecteur propre de plus grande valeur propre, elle capture la plus grande proportion d'inertie
+
+La 2\textsuperscript{nde} composante correspond au  vecteur propre de la seconde plus grande valeur propre , elle capture la seconde plus grande proportion d'inertie 
+
+\medskip
+
+et ainsi de suite.
+
+\medskip
+
+
+Si les variables sont centrées et réduites, leur somme vaut $Dim(P)$ 
 
 
 \end{frame}
+
+
+
+
+\section{Interpréter les résultats d'une ACP}
+
+
+\begin{frame}{Les objets à explorer dans les résultats d'une ACP}
+
+
+\begin{itemize}
+  \item \alert{Dimensionnalité} : L'essentiel de l'inertie est-elle exprimée en peu de dimensions dans l'espace d'arrivée ? 
+  \item \alert{Colinéarité des variables} : Comment les variables de l'espace de départ sont-elles corrélées entre elles et aux axes de l'espace d'arrivée ? 
+  \item \alert{Contribution} : À quel point Individus et Variables  contribuent aux axes de l'espace d'arrivée ?
+  \item \alert{Représentation} : Les Individus et Variables sont ils·elles bien représenté·e·s  par les axes de l'espace d'arrivée ?
+
+\end{itemize}
+
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{Dimensionnalité : Nombres de composantes et inertie}
+
+
+Le \alert{scree plot} montre la proportion d'inertie capturée par les différentes composantes. 
+La valeur propre associée aux vecteurs propres (axes) est proportionnelle à l'inertie capturée.
+
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/scree_plot.png}
+
+
+
+\end{frame}
+
+
+
+\begin{frame}{Dimensionnalité : Nombres de composantes et inertie}
+
+
+\alert{Idéalement}, les premières (2 ou 3 ) composantes capturent une partie significative (e.g. $\gtrapprox50\%$ de l'inertie de $P$
+
+
+\medskip
+
+
+Cela signifie que les composantes \alert{résument bien} l'information contenue dans les variables de $P$, en \alert{peu de dimensions}.
+
+\end{frame}
+
+
+
+
+\begin{frame}{Dimensionnalité : Nombres de composantes}
+
+
+Pour profiter du "résumé" de l'ACP , il faut se limiter à un certain nombre de composantes pour définir l'espace d'arrivée dans lequel on reconstituera les individus et variables. 
+
+\medskip
+
+Heuristiques du choix du nombre: 
+
+\begin{itemize}
+  \item On garde les $q$ axes que l'on sait \alert{interpréter} : 2 ou 3 !
+  \item "coude" dans le scree-plot.
+  \item ne conserver que les $\lambda > 1$ ou $\lambda > 2$
+  \item Karlis-Saporta-Spinaki :  conserver les $\lambda$ t.q. $\lambda > 1 + 2 \sqrt{\frac{p-1}{n-1}}$
+  \item Gavish \& Donoho (2014) : $\lambda = \frac{4 \sigma \sqrt{n}}{\sqrt{3}}$ avec $\sigma$ le bruit estimé dans les données.
+  \end{itemize}
+
+\begin{tiny}
+Avec $\lambda$, les valeurs propres associées aux axes, $p$ le nombre de variable de $P$, et $n$ la taille de $P$
+\end{tiny}
+
+
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}{Nombres de composantes et visualisation}
+
+
+En pratique , si on sélectionne $q$ composantes, il faudra projeter les individus et les variables dans $C_q^2$ plans pour les visualiser.
+
+\medskip
+
+Si $q=3$, il faut 3 graphiques  $\{(q_1,q2) , (q_2,q_3), (q_1,q_3)\} $.
+
+Si $q=4$, il en faut 6 !
+
+\end{frame}
+
+
+
 
 
 \begin{frame}{L'espace d'arrivée}
@@ -389,27 +500,122 @@ De cette projection on tire beaucoup d'information utiles:
 
 
 \begin{itemize}
-\item regroupements d'individus
 \item corrélations de variables
 \item contribution / représentation  des variables 
 \item contribution / représentation des individus 
+\item regroupements d'individus
 \end{itemize}
 \end{frame}
 
 
 
+\section{Projection des variables}
 
 
 
+\begin{frame}{Colinéarité des variables}
 
-\section{Interpréter les résultats d'une ACP}
+Rappel : les variables sont des vecteurs dans l'espace des individus. 
 
-\begin{frame}{L'espace d'arrivée}
+On peut projeter les variables dans l'espace d'arrivée : 
+
+\begin{center}
+\includegraphics[width=0.45\textwidth,keepaspectratio]{img/cercle_trigo_ACP_var.png}
+\end{center}
+\begin{spacing}{0.7}
+\begin{small}
+Si les variables sont centrées et réduites lors de l'ACP, on peut les représenter dans un cercle de corrélation et évaluer visuellement leur  corrélation
+\end{small}
+\end{spacing}
+
+\end{frame}
+
+
+\begin{frame}{Colinéarité des variables}
+
+\begin{center}
+\includegraphics[width=0.5\textwidth,keepaspectratio]{img/cercle_trigo_ACP_var.png}
+\end{center}
+
+\begin{spacing}{0.7}
+Variable $\leftrightarrow$  Flèche 
+
+Coordonnées de la variable $\leftrightarrow$ \alert{corrélation linéaire}  avec les composantes
+
+Proximité au cercle $\leftrightarrow$ qualité de \alert{représentation} de la variable
+
+Angle des variables $\leftrightarrow$ corrélation des variables entre elles
+\end{spacing}
+
 
 
 \end{frame}
 
 
+
+\begin{frame}{Colinéarité des variables}
+
+\begin{center}
+\includegraphics[width=0.5\textwidth,keepaspectratio]{img/cercle_trigo_ACP_var.png}
+\end{center}
+
+
+\begin{itemize}
+\item la corrélation de \texttt{Defense} avec l'Axe 1 est de -0.5
+\item \texttt{Attack} et \texttt{HP} sont très corrélées
+\item \texttt{Speed} et \texttt{Defense} sont (linéairement) indépendantes
+\end{itemize}
+
+
+
+Ici : regroupement de variables ? Oui ! 
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{Contribution des variables}
+
+La \alert{contribution} d'une  variable $v$ à l'inertie de l'axe $k$  est la coordonnée carrée  de $v$ sur l'axe $k$ divisée par son inertie.
+
+$$ ctrb_{vk} =\frac{c_{vk}^2}{\lambda_k} $$ 
+
+
+Plus la contribution d'une variable est élevée , plus elle est importante pour expliquer la variabilité de $P$
+
+
+\end{frame}
+
+
+\begin{frame}{Qualité de représentation des variables}
+
+La \alert{qualité de représentation} d'une  variable $v$ par l'axe $k$  est la coordonnée carrée  de $v$ sur l'axe $k$ :
+
+$$ctrb_{vk} = c_{vk}^2$$ 
+
+\end{frame}
+
+
+
+\section{Projection des individus}
+
+
+\begin{frame}{Nuage de points des individus dans le plan}
+
+Rappel : les individus sont des vecteurs dans l'espace des variables de $P$. 
+
+On peut projeter les individus dans l'espace d'arrivée : 
+
+\begin{center}
+\includegraphics[width=0.65\textwidth,keepaspectratio]{img/cercle_trigo_ACP_ind.png}
+\end{center}
+\begin{spacing}{0.7}
+Parfois cela fait apparaitre des regroupements (ici, pas vraiment) 
+\end{spacing}
+
+\end{frame}
 
 
 
@@ -420,7 +626,7 @@ De cette projection on tire beaucoup d'information utiles:
 
 
   \begin{columns}[T,onlytextwidth]
-    \column{0.5\textwidth}
+    \column{0.48\textwidth}
         \begin{alertblock}{Avantages}
         	\begin{itemize}
         		\item Réduit la dimensionnalité
@@ -428,11 +634,14 @@ De cette projection on tire beaucoup d'information utiles:
         	\end{itemize}
       	\end{alertblock}
 
-    \column{0.5\textwidth}
+    \column{0.48\textwidth}
 	\metroset{block=fill}
     
       \begin{block}{Limites}
-        Composantes difficiles à interpréter en elles-mêmes
+        \begin{itemize}
+            \item Composantes difficiles à interpréter en elles-mêmes
+            \item Que faire si $p$ est grand et si les premières composantes capturent peu d'inertie ?
+          \end{itemize}
       \end{block}
 
       
@@ -442,10 +651,44 @@ De cette projection on tire beaucoup d'information utiles:
 
 
 
-\begin{frame}
+\begin{frame}{Pokémonologie}
+
+
+\begin{columns}[T,onlytextwidth]
+    \column{0.35\textwidth}
+
+\includegraphics[width=\textwidth,keepaspectratio]{img/cercle_trigo_ACP_var.png}
+
+
+  \column{0.65\textwidth}
+\begin{small}  
+\begin{itemize}
+\item L'Axe 1 "prend tout" : c'est la puissance générale des pokémon, une sorte de \alert{score global}
+\item L'Axe 2 sépare les variables en \alert{deux groupes} : celle du  combat "standard" (\texttt{Attack, Defense,HP}) et celles du combat "spécial/rapide" (\texttt{Sp..Atk, SP..Def, Speed})
+\item On pourrait être tenté de diviser les pokemons en "Costauds classiques " vs. "Ninjas spéciaux" . 
+\end{itemize}
+\end{small}
+
+\end{columns}
+
+\medskip  
+\medskip  \medskip  \medskip  \medskip  
+\begin{tiny}
+Merci à Anh Le , \url{https://anhqle.github.io/gotta-plot-them-all/}
+\end{tiny}
+
+
 \end{frame}
 
 
+
+
+\begin{frame}{Ressources utiles}
+
+
+\url{http://www.sthda.com/french/articles/38-methodes-des-composantes-principales-dans-r-guide-pratique/73-acp-analyse-en-composantes-principales-avec-r-l-essentiel}
+
+\end{frame}
 
 
 \begin{frame}{Animation}
