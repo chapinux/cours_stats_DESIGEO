@@ -363,6 +363,21 @@ L'intérêt de l'ACP est de pouvoir se limiter à \alert{quelques} composantes  
 \end{frame}
 
 
+\begin{frame}{Vecteurs propres et valeurs propres dans le cas de l'ACP}
+
+Les \alert{vecteurs propres} définissent la \alert{direction} des axes.
+
+Une \alert{valeur propre}  associée à un vecteur propre  quantifie la \alert{dispersion} des points le long de l'axe orienté par le vecteur propre.
+
+\centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{img/exemple_2D_axe_eigen.png}
+
+
+
+\end{frame}
+
+
+
 \begin{frame}{Nombres de composantes et inertie}
 
 
@@ -382,7 +397,6 @@ et ainsi de suite.
 
 
 Si les variables sont centrées et réduites, leur somme vaut $Dim(P)$ 
-
 
 \end{frame}
 
@@ -509,7 +523,7 @@ De cette projection on tire beaucoup d'information utiles:
 
 
 
-\section{Projection des variables}
+\section{Projection des variables : colinéarité, contribution , qualité de la représentation}
 
 
 
@@ -580,7 +594,7 @@ Ici : regroupement de variables ? Oui !
 
 La \alert{contribution} d'une  variable $v$ à l'inertie de l'axe $k$  est la coordonnée carrée  de $v$ sur l'axe $k$ divisée par son inertie.
 
-$$ ctrb_{vk} =\frac{c_{vk}^2}{\lambda_k} $$ 
+$$ Contrib_{vk} =\frac{c_{vk}^2}{\lambda_k} $$ 
 
 
 Plus la contribution d'une variable est élevée , plus elle est importante pour expliquer la variabilité de $P$
@@ -593,13 +607,13 @@ Plus la contribution d'une variable est élevée , plus elle est importante pour
 
 La \alert{qualité de représentation} d'une  variable $v$ par l'axe $k$  est la coordonnée carrée  de $v$ sur l'axe $k$ :
 
-$$ctrb_{vk} = c_{vk}^2$$ 
+$$Qlt_{vk} = c_{vk}^2$$ 
 
 \end{frame}
 
 
 
-\section{Projection des individus}
+\section{Projection des individus: contribution , qualité de la représentation}
 
 
 \begin{frame}{Nuage de points des individus dans le plan}
@@ -612,7 +626,28 @@ On peut projeter les individus dans l'espace d'arrivée :
 \includegraphics[width=0.65\textwidth,keepaspectratio]{img/cercle_trigo_ACP_ind.png}
 \end{center}
 \begin{spacing}{0.7}
-Parfois cela fait apparaitre des regroupements (ici, pas vraiment) 
+une fois projetés, les individus similaires sont proches.
+Parfois cela fait apparaître des regroupements (ici, pas vraiment) 
+\end{spacing}
+
+\end{frame}
+
+
+\begin{frame}{Nuage de points des individus dans le plan}
+
+
+Il est parfois pertinent de colorer les individus projetés par une variable tierce (i.e. non inclus dans $P_i$ lors du calcul des composantes)
+
+\begin{center}
+\includegraphics[width=0.65\textwidth,keepaspectratio]{img/exemple_2D_color_by_factor.png}
+\end{center}
+\begin{spacing}{0.7}
+
+
+\begin{small}
+Ici : PCA sur toutes les générations de Pokemons, individus projetés sur $(Axe_1, Axe_2 )$, colorés selon le facteur \texttt{Legendary}  
+\end{small}
+
 \end{spacing}
 
 \end{frame}
@@ -620,6 +655,96 @@ Parfois cela fait apparaitre des regroupements (ici, pas vraiment)
 
 
 
+
+\begin{frame}{Contribution des individus}
+
+La \alert{contribution} de l'individu $i$ à l'axe $k$ s'écrit : 
+
+$$Contrib_{ik}= \frac{p_ic_{ik}^2}{\lambda_k}$$
+
+
+Avec : 
+\begin{itemize}
+\setlength\itemsep{-0.1em}
+\item $c_{ik}$ la coordonnée de $i$ selon $k$
+\item $p_i$ le poids de l'individu, à poids constants $\forall i, p_i=\frac{1}{n}$
+\item $\lambda_k$ la valeur propre associée à l'axe $k$
+\end{itemize}
+
+
+\end{frame}
+
+
+
+\begin{frame}{Contribution des individus}
+
+\vspace{1.5cm}
+
+
+
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}
+
+\begin{itemize}
+
+\item Plus la valeur $Contrib_{ik}$ est extrême, plus elle influe sur la direction de l'axe $k$
+\item la coordonnée doit être rapportée à  l'étirement du nuage de points donné par  $\lambda_k$
+\end{itemize}
+
+\column{0.4\textwidth}
+\metroset{block=fill}
+\colorbox{white}{\includegraphics[width=0.85\textwidth,keepaspectratio]{img/contribution_indiv_axe.png}}
+
+\vspace{0.5cm}
+
+\colorbox{white}{\includegraphics[width=0.75\textwidth,keepaspectratio]{img/contribution_indiv_axe2.png}}
+
+\end{columns}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{Qualité de représentation des individus}
+
+La \alert{qualité de représentation} de l'individu $i$ à l'axe $k$ s'écrit : 
+$$Qlt_{ik}=cos^2(\theta_{ik})= \frac{c_{ik}^2}{\|P_i\| ^2}$$
+
+
+
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}
+
+\colorbox{white}{\includegraphics[width=0.85\textwidth,keepaspectratio]{img/angle_qualite_repres_axe.png}}
+
+\column{0.48\textwidth}
+\metroset{block=fill}
+
+  Avec : 
+  \begin{itemize}
+  \setlength\itemsep{-0.1em}
+  \item $c_{ik}$ la coordonnée de $i$ selon $k$
+  \item $\theta_{ik}$ l'angle entre le vecteur $P_i$ et l'axe $k$
+  \item $\|P_i\|$ la norme du vecteur  l'individu $i$
+\end{itemize}
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}{Nouvelles variables, Nouveaux individus}
+
+
+On peut intégrer de nouvelles variables et individus soit dans le calcul de l'ACP, ce qui modifie l'espace d'arrivée , soit \alert{a posteriori}.
+
+
+
+\end{frame}
+
+
+\section{Bilan}
 
 
 \begin{frame}{Bilan de l'ACP}
@@ -631,17 +756,19 @@ Parfois cela fait apparaitre des regroupements (ici, pas vraiment)
         	\begin{itemize}
         		\item Réduit la dimensionnalité
         		\item Regroupe les variables et les individus 
+            \item montre l'effet conjoint des variables 
         	\end{itemize}
       	\end{alertblock}
 
-    \column{0.48\textwidth}
+    \column{0.5\textwidth}
 	\metroset{block=fill}
     
       \begin{block}{Limites}
         \begin{itemize}
             \item Composantes difficiles à interpréter en elles-mêmes
+            \item hypothèses fortes : la  variance est un mélange "linéaire", et la  variance est de l'information, pas du bruit ($\approx$RSB fort)
             \item Que faire si $p$ est grand et si les premières composantes capturent peu d'inertie ?
-          \end{itemize}
+        \end{itemize}
       \end{block}
 
       
@@ -683,6 +810,24 @@ Merci à Anh Le , \url{https://anhqle.github.io/gotta-plot-them-all/}
 
 
 
+
+\begin{frame}{Pour plus tard}
+
+
+La notion d'\alert{inertie} est très utile en classification : observer la chute d'inertie intra-classe indique souvent le nombre optimal de classes ! (cf CAH)
+
+
+
+La \alert{malédiction de la dimensionnalité} (curse of dimensionality) peut nuire dans beaucoup de traitements numériques . Elle peut (parfois) être contournée, en appliquant une ACP !
+
+
+
+
+\end{frame}
+
+
+
+
 \begin{frame}{Ressources utiles}
 
 
@@ -703,13 +848,6 @@ Merci à Anh Le , \url{https://anhqle.github.io/gotta-plot-them-all/}
 
 \begin{frame}[standout]
 Mono message sur une diapo
-\end{frame}
-
-
-\begin{frame}{Formules}
-  \begin{equation*}
-    A = \sum_{i=1}^{n} \left(1 + \frac{1}{x_i}\right)^{\alpha}
-  \end{equation*}
 \end{frame}
 
 
