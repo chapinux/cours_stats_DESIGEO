@@ -1,5 +1,5 @@
 \documentclass{beamer}
-
+\usepackage{mathrsfs}  
 \usepackage{setspace}
 
 % config du thgeme metropolis
@@ -88,6 +88,9 @@ La plupart des phénomènes intéressants (sociaux, spatiaux) sont \alert{multi-
 
 \begin{frame}{Quoi et Comment}
 L'analyse \alert{factorielle}  cherche à réduire la \alert{colinéarité} et le \alert{nombre de dimensions} (=variables) qui décrivent une population ... 
+
+\medskip \medskip
+... L'\alert{Analyse en Composantes Principales} traite des variables \alert{numériques}...
 
 \medskip \medskip
 
@@ -193,6 +196,13 @@ $$I= \frac{1}{n}\sum_{i=1}^n (x_i-\bar{x})^2$$
 
 Le point moyen a pour "coordonnées" $\bar{x}$
 
+\vspace{0.5cm}
+
+\begin{center}
+\colorbox{white}{\includegraphics[width=0.6\textwidth,keepaspectratio]{img/inertie_1D.png}}
+\end{center}
+
+
 \end{frame}
 
 
@@ -204,7 +214,22 @@ Soient $X$ et $Y$ deux variables qui décrivent des individus $p_i$ de la popula
 
 L'inertie de $P$ est :  $$I= \frac{1}{n}\sum_{i=1}^n (x_i-x_g)^2 + (y_i-y_g)^2$$
 
+\begin{tiny}
 On reconnaît une somme de variances : $I=var(X)+var(Y)$
+\end{tiny}
+\begin{figure}[!htb]
+   \begin{minipage}{0.5\textwidth}
+     \centering
+     \includegraphics[width=.7\linewidth]{img/inertie_2D.png}
+     
+   \end{minipage}\hfill
+   \begin{minipage}{0.5\textwidth}
+     \centering
+     \includegraphics[width=.7\linewidth]{img/inertie_2D_2.png}
+     
+   \end{minipage}
+\end{figure}
+
 
 \end{frame}
 
@@ -215,7 +240,9 @@ Soient  $v$ variables , notées $X^{(k)}, k \in \{1,\dots,v\}$ qui décrivent le
 
 L'inertie de $P$ est :  $$I= \frac{1}{n}\sum_{k=1}^v\sum_{i=1}^n (x_i^{(k)}-x^{(k)}_g)^2$$
 
-on reconnaît $$I= \sum_{k=1}^v var(X^{(k)})$$
+\begin{tiny}
+on reconnaît $I= \sum_{k=1}^v var(X^{(k)})$
+\end{tiny}
 
 \end{frame}
 
@@ -317,19 +344,13 @@ Espace d'arrivée + les axes de l'espace de départ
 
 
 
-\begin{frame}
-
-
-espace de départ $\rightarrow$ ACP $\rightarrow$ espace d'arrivée 
-
-\end{frame}
 
 
 
 
 \begin{frame}{Calcul des axes}
 
-Les \alert{axes} sont les \alert{vecteurs propres} de la matrice de corrélation de $P$, $Cor_P$. 
+Les \alert{axes} sont les \alert{vecteurs propres} de la matrice de corrélation de $P$.
 On peut les calculer (ouf !)
 
 \medskip
@@ -343,9 +364,20 @@ On appelle ces axes \alert{composantes}, elles sont \alert{linéairement indépe
 
 
 
+
+\begin{frame}
+
+ \centering
+\colorbox{white}{\includegraphics[width=\textwidth,keepaspectratio]{img/schema_ACP.png}}
+
+
+\end{frame}
+
+
+
 \begin{frame}{Nombres de composantes et inertie}
 
-L'ACP capture l'inertie de $P$ en créant des composantes (les vecteurs propres de  $Cor_P$). 
+L'ACP capture l'inertie de $P$ en créant des \alert{composantes} (les vecteurs propres de  la matrice de variance/covariance de $P$). 
 
 \medskip
 
@@ -354,16 +386,16 @@ Il y a autant de composantes possibles que de dimensions de l'espace de départ.
 \medskip  
 
 
-L'intérêt de l'ACP est de pouvoir se limiter à \alert{quelques} composantes  pour à la fois 
+L'intérêt de l'ACP est de pouvoir se limiter à \alert{quelques} composantes :  
 \begin{itemize}
-\item  capturer suffisamment l'inertie ($\approx$ l'information) de $P$
-\item  réduire la dimensionnalité ($\approx$ complexité) de $P$
+\item  pour capturer suffisamment l'inertie ($\approx$ l'information) de $P$
+\item  pour réduire la dimensionnalité ($\approx$ complexité) de $P$
 \end{itemize}
 
 \end{frame}
 
 
-\begin{frame}{Vecteurs propres et valeurs propres dans le cas de l'ACP}
+\begin{frame}{Vecteurs propres et valeurs propres }
 
 Les \alert{vecteurs propres} définissent la \alert{direction} des axes.
 
@@ -381,17 +413,21 @@ Une \alert{valeur propre}  associée à un vecteur propre  quantifie la \alert{d
 \begin{frame}{Nombres de composantes et inertie}
 
 
-L'inertie capturée par une composante $k$ est sa valeur propre , $\lambda_k$
+L'\alert{inertie capturée} par une composante $k$ est sa valeur propre , \alert{$\lambda_k$}
 
 On ordonne les composantes par valeur propre décroissantes:
 
-La 1\textsuperscript{ère} composante correspond au vecteur propre de plus grande valeur propre, elle capture la plus grande proportion d'inertie
 
-La 2\textsuperscript{nde} composante correspond au  vecteur propre de la seconde plus grande valeur propre , elle capture la seconde plus grande proportion d'inertie 
+\begin{small}
+\begin{itemize}
+  \setlength\itemsep{-0.0em}
+\item La 1\textsuperscript{ère} composante correspond au vecteur propre de plus grande valeur propre, elle capture la plus grande proportion d'inertie
 
+\item La 2\textsuperscript{nde} composante correspond au  vecteur propre de la seconde plus grande valeur propre , elle capture la seconde plus grande proportion d'inertie 
+\item etc.
+\end{itemize}
+\end{small}
 \medskip
-
-et ainsi de suite.
 
 \medskip
 
@@ -443,7 +479,7 @@ La valeur propre associée aux vecteurs propres (axes) est proportionnelle à l'
 \begin{frame}{Dimensionnalité : Nombres de composantes et inertie}
 
 
-\alert{Idéalement}, les premières (2 ou 3 ) composantes capturent une partie significative (e.g. $\gtrapprox50\%$ de l'inertie de $P$
+\alert{Idéalement}, les premières (2 ou 3 ) composantes capturent une partie significative (e.g. $\gtrapprox50\%$) de l'inertie de $P$.
 
 
 \medskip
@@ -459,20 +495,20 @@ Cela signifie que les composantes \alert{résument bien} l'information contenue 
 \begin{frame}{Dimensionnalité : Nombres de composantes}
 
 
-Pour profiter du "résumé" de l'ACP , il faut se limiter à un certain nombre de composantes pour définir l'espace d'arrivée dans lequel on reconstituera les individus et variables. 
+Pour profiter du "résumé" de l'ACP, il faut se limiter à un certain nombre de composantes pour définir l'espace d'arrivée.
 
 \medskip
 
 Heuristiques du choix du nombre: 
-
+\begin{small}
 \begin{itemize}
   \item On garde les $q$ axes que l'on sait \alert{interpréter} : 2 ou 3 !
-  \item "coude" dans le scree-plot.
+  \item \alert{"coude"} dans le scree-plot.
   \item ne conserver que les $\lambda > 1$ ou $\lambda > 2$
   \item Karlis-Saporta-Spinaki :  conserver les $\lambda$ t.q. $\lambda > 1 + 2 \sqrt{\frac{p-1}{n-1}}$
   \item Gavish \& Donoho (2014) : $\lambda = \frac{4 \sigma \sqrt{n}}{\sqrt{3}}$ avec $\sigma$ le bruit estimé dans les données.
   \end{itemize}
-
+\end{small}
 \begin{tiny}
 Avec $\lambda$, les valeurs propres associées aux axes, $p$ le nombre de variable de $P$, et $n$ la taille de $P$
 \end{tiny}
@@ -514,10 +550,10 @@ De cette projection on tire beaucoup d'information utiles:
 
 
 \begin{itemize}
-\item corrélations de variables
-\item contribution / représentation  des variables 
-\item contribution / représentation des individus 
-\item regroupements d'individus
+\item \alert{corrélations} de variables
+\item \alert{contribution / représentation}  des variables 
+\item \alert{contribution / représentation} des individus 
+\item \alert{regroupements} d'individus
 \end{itemize}
 \end{frame}
 
