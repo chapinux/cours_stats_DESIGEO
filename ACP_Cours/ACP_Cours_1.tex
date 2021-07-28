@@ -1,6 +1,8 @@
 \documentclass{beamer}
 \usepackage{mathrsfs}  
+\usepackage{xcolor}
 \usepackage{setspace}
+\usepackage{comment}
 
 % config du thgeme metropolis
 \usetheme[progressbar=frametitle,block=fill, titleformat=smallcaps,sectionpage=progressbar,]{metropolis}
@@ -553,13 +555,13 @@ De cette projection on tire beaucoup d'information utiles:
 \item \alert{corrélations} de variables
 \item \alert{contribution / représentation}  des variables 
 \item \alert{contribution / représentation} des individus 
-\item \alert{regroupements} d'individus
+\item \alert{regroupements} d'individus, individus extrêmes
 \end{itemize}
 \end{frame}
 
 
 
-\section{Projection des variables : colinéarité, contribution , qualité de la représentation}
+\section{Projection des variables : colinéarité, contribution, qualité de la représentation}
 
 
 
@@ -574,7 +576,7 @@ On peut projeter les variables dans l'espace d'arrivée :
 \end{center}
 \begin{spacing}{0.7}
 \begin{small}
-Si les variables sont centrées et réduites lors de l'ACP, on peut les représenter dans un cercle de corrélation et évaluer visuellement leur  corrélation
+Si les variables sont \alert{centrées et réduites} lors de l'ACP, on peut les représenter dans un \alert{cercle de corrélation} et évaluer visuellement leur  corrélation
 \end{small}
 \end{spacing}
 
@@ -584,7 +586,7 @@ Si les variables sont centrées et réduites lors de l'ACP, on peut les représe
 \begin{frame}{Colinéarité des variables}
 
 \begin{center}
-\includegraphics[width=0.5\textwidth,keepaspectratio]{img/cercle_trigo_ACP_var.png}
+\includegraphics[width=0.35\textwidth,keepaspectratio]{img/cercle_trigo_ACP_var.png}
 \end{center}
 
 \begin{spacing}{0.7}
@@ -606,7 +608,7 @@ Angle des variables $\leftrightarrow$ corrélation des variables entre elles
 \begin{frame}{Colinéarité des variables}
 
 \begin{center}
-\includegraphics[width=0.5\textwidth,keepaspectratio]{img/cercle_trigo_ACP_var.png}
+\includegraphics[width=0.35\textwidth,keepaspectratio]{img/cercle_trigo_ACP_var.png}
 \end{center}
 
 
@@ -645,6 +647,9 @@ La \alert{qualité de représentation} d'une  variable $v$ par l'axe $k$  est la
 
 $$Qlt_{vk} = c_{vk}^2$$ 
 
+
+(On peut vouloir vérifier qu'une variable d'intérêt soit bien représentée dans les premières composantes.)
+
 \end{frame}
 
 
@@ -663,7 +668,7 @@ On peut projeter les individus dans l'espace d'arrivée :
 \end{center}
 \begin{spacing}{0.7}
 une fois projetés, les individus similaires sont proches.
-Parfois cela fait apparaître des regroupements (ici, pas vraiment) 
+Parfois cela fait apparaître des regroupements (ici, pas vraiment) et des individus extrêmes.
 \end{spacing}
 
 \end{frame}
@@ -725,6 +730,7 @@ Avec :
 
 \item Plus la valeur $Contrib_{ik}$ est extrême, plus elle influe sur la direction de l'axe $k$
 \item la coordonnée doit être rapportée à  l'étirement du nuage de points donné par  $\lambda_k$
+\item filtrer des individus extrèmes \textit{peut} améliorer l'ACP ! 
 \end{itemize}
 
 \column{0.4\textwidth}
@@ -773,7 +779,11 @@ $$Qlt_{ik}=cos^2(\theta_{ik})= \frac{c_{ik}^2}{\|P_i\| ^2}$$
 \begin{frame}{Nouvelles variables, Nouveaux individus}
 
 
-On peut intégrer de nouvelles variables et individus soit dans le calcul de l'ACP, ce qui modifie l'espace d'arrivée , soit \alert{a posteriori}.
+On peut intégrer de nouvelles variables et individus: 
+\begin{itemize}
+\item soit dans le calcul de l'ACP, ce qui modifie l'espace d'arrivée,
+\item soit \alert{a posteriori}.
+\end{itemize}
 
 
 
@@ -864,13 +874,19 @@ La \alert{malédiction de la dimensionnalité} (curse of dimensionality) peut nu
 
 
 
-\begin{frame}{Ressources utiles}
+\begin{frame}{Références }
 
 
-\url{http://www.sthda.com/french/articles/38-methodes-des-composantes-principales-dans-r-guide-pratique/73-acp-analyse-en-composantes-principales-avec-r-l-essentiel}
+\begin{itemize}
+\item \href{http://www.sthda.com/french/articles/38-methodes-des-composantes-principales-dans-r-guide-pratique/73-acp-analyse-en-composantes-principales-avec-r-l-essentiel}{\color{cyan}{Page ACP STDHA}}
+\item \href{https://gitlab.huma-num.fr/hcommenges/cours_statcomplet}{\color{cyan}{Cours d'Hadrien Commenges}}
+\end{itemize}
+
 
 \end{frame}
 
+
+\begin{comment}
 
 \begin{frame}{Animation}
   \begin{itemize}[<+- | alert@+>]
@@ -885,6 +901,6 @@ La \alert{malédiction de la dimensionnalité} (curse of dimensionality) peut nu
 \begin{frame}[standout]
 Mono message sur une diapo
 \end{frame}
-
+\end{comment}
 
 \end{document}
