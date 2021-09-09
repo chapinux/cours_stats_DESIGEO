@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{Analyse Univariée}{5}{0}{2}
+\beamer@sectionintoc {3}{Décrire une distribution : mesures de \alert {tendance centrale}}{12}{0}{3}
+\beamer@sectionintoc {4}{Décrire une distribution : mesures de \alert {dispersion}}{22}{0}{4}
