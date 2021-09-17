@@ -371,14 +371,15 @@ Inconvénient : Comme le mode , la médiane ne dépend pas de toutes les observa
 Que peut on dire d'une population dont la médiane est inférieure à la moyenne ? 
 
 
-Exemple : revenus mensuels en équivalent temps plein en France en 2016 : le revenu mensuel net moyen est de 2 238 €, le revenu mensuel net médian est de 1 789 € : selon l’\url{https://www.insee.fr/fr/statistiques/4277680?sommaire=4318291}
+Exemple : revenus mensuels en équivalent temps plein en France en 2016.
 
-Supposons qu’on cherche à évaluer si un salaire mensuel net équivalent temps plein de 2000€ est un bon salaire en France, sans définir trop rigoureusement ce qui signifie «bon».
+Revenu mensuel net moyen 2 238 €\\
+Revenu mensuel net médian 1 789 € 
 
-2000€ est inférieur à la moyenne du pays, on peut le considérer comme trop bas pour être «bon».
-2000€ est supérieur au salaire médian, il est supérieur à (au moins) la moitié des salaires du pays, et on peut logiquement le considérer comme un «bon» salaire.
-Cette double interprétation est due au fait que certains salaires très élevés, mais d’effectifs peu nombreux, tirent la distribution du salaire vers la droite, et avec eux, la moyenne.
-
+\vspace{2cm}
+\begin{tiny}
+source \url{https://www.insee.fr/fr/statistiques/4277680?sommaire=4318291}
+\end{tiny}
 
 
 \end{frame}
@@ -387,7 +388,17 @@ Cette double interprétation est due au fait que certains salaires très élevé
 
 \begin{frame}{Moyenne et médiane}
 
-Que peut on dire d'une population dont la médiane est inférieure à la moyenne ? 
+Un salaire mensuel net équivalent temps plein de 2000€ est-il un bon salaire ? 
+
+\begin{itemize}
+  \item 2000€  <  moyenne  :  on peut le considérer comme trop bas pour être «bon»
+  \item 2000€ > médiane  :  supérieur à (au moins) la moitié des salaires du pays, on peut le considérer comme un «bon» salaire.
+\end{itemize}
+
+\begin{small}
+Double interprétation  \& «instinctivement» on imagine une dispersion symmétrique, où la moyenne est proche de la médiane 
+\end{small}
+
 
 \end{frame}
 
@@ -399,145 +410,222 @@ Que peut on dire d'une population dont la médiane est inférieure à la moyenne
 \begin{frame}{Dispersion}
 
 
-La tendance centrale est \alert{une} valeur qui \alert{résume} une série de valeurs (quantitative)
-
+La  \alert{dispersion} décrit  la tendance des valeurs d'une variable à se disperser plus ou moins largement autour des valeurs des tendances centrales.
 
 \end{frame}
 
 
+\begin{frame}{Variance et écart type}
 
-\begin{comment}
+La \alert{variance} est la somme des écarts carrés à la moyenne rapporté à l'effectif
 
+$$ var_X= \frac{1}{n}\sum_{i=1}^{n}(x_i -\bar{x})^2$$
 
-
-
-
-\begin{columns}[T,onlytextwidth]
-\column{0.48\textwidth}
-
+Avec :
 \begin{itemize}
-
-\item Plus la valeur $Contrib_{ik}$ est extrême, plus elle influe sur la direction de l'axe $k$
-\item la coordonnée doit être rapportée à  l'étirement du nuage de points donné par  $\lambda_k$
-\item filtrer des individus extrèmes \textit{peut} améliorer l'ACP ! 
+  \item $X$ une variable
+  \item $x_i$ les valeurs de la variables
+  \item $\bar{x}$ la moyenne de $X$ 
+  \item $n$ l'effectif
 \end{itemize}
 
-\column{0.4\textwidth}
-\metroset{block=fill}
-\colorbox{white}{\includegraphics[width=0.85\textwidth,keepaspectratio]{img/contribution_indiv_axe.png}}
-
-\vspace{0.5cm}
-
-\colorbox{white}{\includegraphics[width=0.75\textwidth,keepaspectratio]{img/contribution_indiv_axe2.png}}
-
-\end{columns}
 
 \end{frame}
 
 
+\begin{frame}{Variance et écart type}
+
+
+L'\alert{écart type} est la racine carrée de la variance
+
+
+$$\sigma_X = \sqrt{var_X}$$ 
 
 
 
-\begin{frame}{Qualité de représentation des individus}
-
-La \alert{qualité de représentation} de l'individu $i$ à l'axe $k$ s'écrit : 
-$$Qlt_{ik}=cos^2(\theta_{ik})= \frac{c_{ik}^2}{\|P_i\| ^2}$$
-
-
-
-\begin{columns}[T,onlytextwidth]
-\column{0.48\textwidth}
-
-\colorbox{white}{\includegraphics[width=0.85\textwidth,keepaspectratio]{img/angle_qualite_repres_axe.png}}
-
-\column{0.48\textwidth}
-\metroset{block=fill}
-
-  Avec : 
-  \begin{itemize}
-  \setlength\itemsep{-0.1em}
-  \item $c_{ik}$ la coordonnée de $i$ selon $k$
-  \item $\theta_{ik}$ l'angle entre le vecteur $P_i$ et l'axe $k$
-  \item $\|P_i\|$ la norme du vecteur  l'individu $i$
-\end{itemize}
-\end{columns}
-
-\end{frame}
-
-
-
-\begin{frame}{Bilan de l'ACP}
-
-
-  \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-        \begin{alertblock}{Avantages}
-        	\begin{itemize}
-        		\item Réduit la dimensionnalité
-        		\item Regroupe les variables et les individus 
-            \item montre l'effet conjoint des variables 
-        	\end{itemize}
-      	\end{alertblock}
-
-    \column{0.5\textwidth}
-	\metroset{block=fill}
-    
-      \begin{block}{Limites}
-        \begin{itemize}
-            \item Composantes difficiles à interpréter en elles-mêmes
-            \item hypothèses fortes : la  variance est un mélange "linéaire", et la  variance est de l'information, pas du bruit ($\approx$RSB fort)
-            \item Que faire si $p$ est grand et si les premières composantes capturent peu d'inertie ?
-        \end{itemize}
-      \end{block}
-
-      
-  \end{columns}
-\end{frame}
+Variance et écart-type sont sensibles aux valeurs extrêmes et toujours positifs.\\
 
 
 
 
-\begin{frame}{Pokémonologie}
 
-
-\begin{columns}[T,onlytextwidth]
-    \column{0.35\textwidth}
-
-\includegraphics[width=\textwidth,keepaspectratio]{img/cercle_trigo_ACP_var.png}
-
-
-  \column{0.65\textwidth}
-\begin{small}  
-\begin{itemize}
-\item L'Axe 1 "prend tout" : c'est la puissance générale des pokémon, une sorte de \alert{score global}
-\item L'Axe 2 sépare les variables en \alert{deux groupes} : celle du  combat "standard" (\texttt{Attack, Defense,HP}) et celles du combat "spécial/rapide" (\texttt{Sp..Atk, SP..Def, Speed})
-\item On pourrait être tenté de diviser les pokemons en "Costauds classiques " vs. "Ninjas spéciaux" . 
-\end{itemize}
-\end{small}
-
-\end{columns}
-
-\medskip  
-\medskip  \medskip  \medskip  \medskip  
 \begin{tiny}
-Merci à Anh Le , \url{https://anhqle.github.io/gotta-plot-them-all/}
+\begin{spacing}{0.8}
+Si $var_X = 0$ ou $\sigma_X = 0$ , alors $X$ est \alert{constante}.\\
+Un écart-type faible indique que les valeurs sont réparties de façon \alert{homogène} autour de la moyenne.
+\end{spacing}
 \end{tiny}
 
 
+
 \end{frame}
 
 
+\begin{frame}{Quantiles}
+ 
 
-\begin{frame}{Références }
+La \alert{médiane} sépare une population en \alert{deux} classes d'égal effectif 
 
+Les \alert{quantiles}  séparent une population en \alert{$n$} classes d'égal effectif.
+\end{frame}
+
+
+\begin{frame}{Quartiles}
+
+
+
+
+Les \alert{quartiles} d'une population selon une variable $X$ sont trois valeurs, $Q_1,Q_2,Q_3$ qui séparent la population en \alert{quatre} classes d'égal effectif.
 
 \begin{itemize}
-\item \href{http://www.sthda.com/french/articles/38-methodes-des-composantes-principales-dans-r-guide-pratique/73-acp-analyse-en-composantes-principales-avec-r-l-essentiel}{\color{cyan}{Page ACP STDHA}}
-\item \href{https://gitlab.huma-num.fr/hcommenges/cours_statcomplet}{\color{cyan}{Cours d'Hadrien Commenges}}
+  \item 25\% des valeurs de $X$ sont strictement inférieures à $Q_1$
+  \item 50\% des valeurs de $X$ sont strictement inférieures à $Q_2$ (médiane)
+  \item 75\% des valeurs de $X$ sont strictement inférieures à $Q_3$
 \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Déciles}
+
+
+
+Les déciles sont les \alert{9} quantiles $Q_1,Q_2,\dots,Q_9$ qui séparent une population  \alert{10} classes d'égal effectif.
+
+\end{frame}
+
+
+\begin{frame}{Écarts inter-quartiles et inter-déciles}
+
+
+\alert{Écart inter-quartile}: $Q_3-Q_1$ , capture 50\% des valeurs de la population les plus proches de la médiane
+
+\vspace{1cm}
+
+
+\alert{Écart inter-décile}: $Q_9-Q_1$ , capture 80\% des valeurs de la population les plus proches de la médiane
+
+\end{frame}
+
+
+\begin{frame}{Quantiles}
+
+
+
+
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}
+\begin{block}{Avantages}
+
+Peu sensibles aux distributions aplaties et aux valeurs extrêmes
+
+L'écart inter-quantile est plus robuste que l'écart-type
+\end{block}
+\column{0.4\textwidth}
+\metroset{block=fill}
+
+\begin{block}{Inconvénients}
+
+Parfois délicat pour les variables quantitatives discrètes
+
+Les écarts inter-quantiles négligent l'influence des valeurs extrêmes sur la distribution
+\end{block}
+
+
+\end{columns}
+
+
+
+
+
 
 
 \end{frame}
+
+\begin{frame}{Les boîtes à moustaches (boxplots)}
+
+
+\vspace{1cm}
+Représentation courante de la dispersion d'une variable à l'aide de \alert{quartiles}
+
+
+
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}
+
+\centering
+\includegraphics[width=\linewidth]{img/boxplot.png}
+
+\column{0.5\textwidth}
+\metroset{block=fill}
+\begin{scriptsize}
+\begin{itemize}
+\item La \alert{marque centrale} de la boîte est la \alert{médiane}
+\item Les \alert{bords} de la boîte sont les \alert{quartiles $Q_1$ et $Q_3$}
+\item Les moustaches vont jusqu'à la plus grande (resp. la plus petite ) valeur inférieure (resp. supérieure)  à \alert{1.5 fois l’écart interquartile} 
+\item Les valeurs qui dépassent les moustaches sont affichées sous formes de points
+\end{itemize}
+\end{scriptsize}
+\end{columns}
+
+\end{frame}
+
+
+
+\begin{frame}{Le coefficient de variation}
+
+Le \alert{coefficient} de variation ($CV$) est une autre mesure de dispersion.
+
+C'est le ratio entre l'écart-type $\sigma_x$ et la moyenne $\bar{x}$ d'une variable quantitative $X$.
+
+$$ CV(X)=\frac{\sigma_x}{\bar{x}}$$
+
+Plus il est important , plus la dispersion est grande.
+
+Plus il est proche de 0, plus les données sont homogènes.
+
+
+Inconvénients similaires à ceux de  $\bar{x}$ et $\sigma_x$ : sensibilité aux valeurs extrêmes.
+
+
+\end{frame}
+
+\begin{frame}{Comparaison de dispersion de deux distributions}
+
+
+
+Exemple : deux communes  versent des aides aux entreprises locales, qu'on suppose distribuées suivant une loi normale. 
+
+Commune A :  moyenne = 390 euros, $\sigma$ = 30 euros 
+
+Commune B :  moyenne = 152 euros, $\sigma$ = 8 euros
+
+\vspace{1cm}
+
+Pour quelle commune les aides sont les plus homogènes?
+
+
+
+\end{frame}
+
+
+
+
+
+\section{Décrire une distribution : \alert{asymétrie} et \alert{aplatissement}} 
+
+
+
+\begin{frame}{Asymétrie}
+
+
+
+\centering
+\includegraphics[width=\linewidth]{img/asymetrie.png}
+
+
+
+\end{frame}
+
 
 
 \begin{comment}
