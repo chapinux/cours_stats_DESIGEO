@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.10)  9 SEP 2021 11:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.10)  1 OCT 2021 18:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -987,7 +987,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 ry-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./Univariee_Bivariee.nav)
-<img/logoENSG_big.png, id=25, 672.5125pt x 725.71124pt>
+<img/logoENSG_big.png, id=37, 672.5125pt x 725.71124pt>
 File: img/logoENSG_big.png Graphic file (type png)
 <use img/logoENSG_big.png>
 Package pdftex.def Info: img/logoENSG_big.png  used on input line 62.
@@ -1035,7 +1035,7 @@ LaTeX Font Info:    Trying to load font information for TS1+cmss on input line
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-<img/logoENSG_small.jpg, id=45, 322.20375pt x 157.58875pt>
+<img/logoENSG_small.jpg, id=57, 322.20375pt x 157.58875pt>
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
 Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 78.
@@ -1052,12 +1052,12 @@ Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 93.
 ] [5
 
 ]
-<img/histogramme1.png, id=65, 578.16pt x 289.08pt>
+<img/histogramme1.png, id=77, 578.16pt x 289.08pt>
 File: img/histogramme1.png Graphic file (type png)
 <use img/histogramme1.png>
 Package pdftex.def Info: img/histogramme1.png  used on input line 129.
 (pdftex.def)             Requested size: 138.2795pt x 69.138pt.
-<img/histogramme2.png, id=66, 578.16pt x 289.08pt>
+<img/histogramme2.png, id=78, 578.16pt x 289.08pt>
 File: img/histogramme2.png Graphic file (type png)
 <use img/histogramme2.png>
 Package pdftex.def Info: img/histogramme2.png  used on input line 129.
@@ -1069,7 +1069,7 @@ Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 129.
  [6
 
  <./img/histogramme1.png (PNG copy)> <./img/histogramme2.png (PNG copy)>]
-<img/densité.png, id=73, 578.16pt x 289.08pt>
+<img/densité.png, id=85, 578.16pt x 289.08pt>
 File: img/densité.png Graphic file (type png)
 <use img/densité.png>
 Package pdftex.def Info: img/densité.png  used on input line 148.
@@ -1088,7 +1088,7 @@ Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 165.
  [8
 
 ]
-<img/histo_dens.png, id=90, 578.16pt x 289.08pt>
+<img/histo_dens.png, id=102, 578.16pt x 289.08pt>
 File: img/histo_dens.png Graphic file (type png)
 <use img/histo_dens.png>
 Package pdftex.def Info: img/histo_dens.png  used on input line 180.
@@ -1164,7 +1164,7 @@ Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 315.
  [17
 
 ]
-<img/trimodale.png, id=143, 578.16pt x 289.08pt>
+<img/trimodale.png, id=155, 578.16pt x 289.08pt>
 File: img/trimodale.png Graphic file (type png)
 <use img/trimodale.png>
 Package pdftex.def Info: img/trimodale.png  used on input line 334.
@@ -1188,48 +1188,184 @@ Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 364.
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-84.
+85.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 384.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 385.
 (pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
-
-Overfull \vbox (55.9093pt too high) detected at line 384
- []
-
-[20
+ [20
 
 ]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 392.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 403.
 (pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
  [21
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\alert' on input line 397.
-
-
-Overfull \hbox (14.96002pt too wide) in paragraph at lines 397--397
-[][][]  
- []
+(hyperref)                removing `\alert' on input line 408.
 
 [22
 
 ]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 405.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 415.
 (pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
  [23
 
-] Excluding 'comment' comment.
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 433.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+ [24
+
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 461.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+ [25
+
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 470.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+ [26
+
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 485.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+ [27
+
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 494.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+ [28
+
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 507.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+ [29
+
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 542.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+ [30
+
+]
+<img/boxplot.png, id=230, 578.16pt x 289.08pt>
+File: img/boxplot.png Graphic file (type png)
+<use img/boxplot.png>
+Package pdftex.def Info: img/boxplot.png  used on input line 570.
+(pdftex.def)             Requested size: 147.49782pt x 73.7475pt.
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 570.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+ [31
+
+ <./img/boxplot.png (PNG copy)>]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 590.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+ [32
+
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 608.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+ [33
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\alert' on input line 614.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\alert' on input line 614.
+
+[34
+
+]
+<img/asymetrie.png, id=255, 578.16pt x 289.08pt>
+File: img/asymetrie.png Graphic file (type png)
+<use img/asymetrie.png>
+Package pdftex.def Info: img/asymetrie.png  used on input line 628.
+(pdftex.def)             Requested size: 307.28987pt x 153.64394pt.
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 628.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+ [35
+
+ <./img/asymetrie.png (PNG copy)>]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 647.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+ [36
+
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 663.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+ [37
+
+]
+<img/aplatissement.png, id=274, 650.43pt x 289.08pt>
+File: img/aplatissement.png Graphic file (type png)
+<use img/aplatissement.png>
+Package pdftex.def Info: img/aplatissement.png  used on input line 679.
+(pdftex.def)             Requested size: 307.28987pt x 136.57777pt.
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 679.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+
+Overfull \vbox (8.368pt too high) detected at line 679
+ []
+
+[38
+
+ <./img/aplatissement.png (PNG copy)>]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 699.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+ [39
+
+] [40
+
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 710.
+(pdftex.def)             Requested size: 44.96564pt x 21.99463pt.
+ [41
+
+]
+Excluding 'comment' comment.
 \tf@nav=\write7
 \openout7 = `Univariee_Bivariee.nav'.
 
@@ -1239,56 +1375,55 @@ Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 405.
 \tf@snm=\write9
 \openout9 = `Univariee_Bivariee.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 560.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 560.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 733.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 733.
  (./Univariee_Bivariee.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 560.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 560.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 733.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 733.
+Package rerunfilecheck Info: File `Univariee_Bivariee.out' has not changed.
+(rerunfilecheck)             Checksum: 3377BAA39A634EF797DC79376AEF7522;429.
 
-
-Package rerunfilecheck Warning: File `Univariee_Bivariee.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Univariee_Bivariee.out':
-(rerunfilecheck)             Before: 0BA9057A446296DC26F6B8199DC173D5;195
-(rerunfilecheck)             After:  31E9F7E61ED12EEFDC7A7D3A9E6AC655;281.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 21520 strings out of 483081
- 426720 string characters out of 5963441
- 658687 words of memory out of 5000000
- 35945 multiletter control sequences out of 15000+600000
- 556069 words of font info for 81 fonts, out of 8000000 for 9000
+ 21635 strings out of 483081
+ 427942 string characters out of 5963441
+ 659687 words of memory out of 5000000
+ 36018 multiletter control sequences out of 15000+600000
+ 556408 words of font info for 82 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  66i,13n,95p,1900b,737s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt10
-95.600pk> </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec
-/ecsi0600.600pk> </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour/jkna
-ppen/ec/tcss1000.600pk> </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfo
-ur/jknappen/ec/ecsi0800.600pk> </home/paulchapron/.texlive2019/texmf-var/fonts/
-pk/ljfour/jknappen/ec/ecsi1095.600pk> </home/paulchapron/.texlive2019/texmf-var
-/fonts/pk/ljfour/jknappen/ec/ecsx1095.600pk> </home/paulchapron/.texlive2019/te
-xmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.600pk> </home/paulchapron/.texlive
-2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1095.600pk> </home/paulchapron/.
-texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1200.600pk> </home/paulch
-apron/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0800.600pk> </home
-/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0600.600pk>
- </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0700
+ </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss08
+00.600pk> </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec
+/ecsi0500.600pk> </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ectt0800.450pk> </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecsi0600.600pk> </home/paulchapron/.texlive2019/texmf-var/fonts/
+pk/ljfour/jknappen/ec/tcss1000.600pk> </home/paulchapron/.texlive2019/texmf-var
+/fonts/pk/ljfour/jknappen/ec/ecsi0800.600pk> </home/paulchapron/.texlive2019/te
+xmf-var/fonts/pk/ljfour/jknappen/ec/ecsi1095.600pk> </home/paulchapron/.texlive
+2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1095.600pk> </home/paulchapron/.
+texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1095.600pk> </home/paulch
+apron/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1095.600pk> </home
+/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1200.600pk>
+ </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0800
 .600pk> </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/e
-css1000.600pk> </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour/jknapp
-en/ec/ecsx1440.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Univariee_Bivariee.pdf (23 pages, 308632 bytes).
+css0600.600pk> </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour/jknapp
+en/ec/ecss0700.600pk> </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour
+/jknappen/ec/ecss1000.600pk> </home/paulchapron/.texlive2019/texmf-var/fonts/pk
+/ljfour/jknappen/ec/ecsx1440.600pk></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Univariee_Bivariee.pdf (41 pages, 449900 bytes).
 PDF statistics:
- 556 PDF objects out of 1000 (max. 8388607)
- 210 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
- 102 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 786 PDF objects out of 1000 (max. 8388607)
+ 324 compressed objects within 4 object streams
+ 89 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

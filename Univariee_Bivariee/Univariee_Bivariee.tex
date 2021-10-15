@@ -615,7 +615,8 @@ Pour quelle commune les aides sont les plus homogènes?
 
 
 
-\begin{frame}{Asymétrie}
+\begin{frame}{Asymétrie (ou \alert{skewness})}
+
 
 
 
@@ -625,6 +626,92 @@ Pour quelle commune les aides sont les plus homogènes?
 
 
 \end{frame}
+
+
+\begin{frame}{Coefficients d'asymétrie de Pearson}
+
+
+Deux moyens simples d'estimer l'asymétrie 
+
+$$ C_1 = \frac{\bar{x} - mode(X)}{\sigma_x}$$
+
+$$ C_2 = \frac{3(\bar{x} - mediane(X))}{\sigma_x}$$
+
+\begin{itemize}
+  \item coefficient \alert{nul} :  la distribution est \alert{symétrique}
+  \item coefficient \alert{négatif} : la distribution est \alert{déformée à gauche} de la médiane (sur-représentation de valeurs faibles, à gauche)
+  \item coefficient \alert{positif} :  la distribution est \alert{déformée à droite} de la médiane (sur-représentation de valeurs fortes, à droite)
+\end{itemize}
+
+
+\end{frame}
+
+
+\begin{frame}{ Coefficient d'asymétrie de Fischer}
+
+
+Ce coefficient est le moment  d'ordre 3  de la variable $X$ ( de moyenne $\mu$ et d'écart-type $\sigma$) \alert{centrée réduite}
+
+$$skewness'=\mathbb{E}\bigg[\bigg(\frac{X-\mu}{\sigma}\bigg)^3\bigg]=\frac{\sum_{i=0}^{n} (x_i - \bar{x})^3}{n\sigma^3}$$
+
+
+Interprétation similaire aux coefficients de Pearson  
+
+
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{Aplatissement  (ou \alert{Kurtosis})}
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{img/aplatissement.png}
+\end{center}
+
+Courbe piquée: Peu de variation, distribution relativement homogène, beaucoup de valeurs égales ou proches de la moyenne.
+
+Courbe aplatie: Variations importantes, distribution relativement hétérogène, beaucoup de valeurs s’éloignent de la moyenne.
+
+\end{frame}
+
+
+
+\begin{frame}{Coefficient de Kurtosis}
+
+
+
+
+$$ K=\frac{\sum_{i=1}^{n}(x_i -\bar{x})^4}{n\sigma^4}$$
+
+Si la distribution est normale, $K= 3$
+
+Si $K>3$, la distribution est \alert{plus aplatie} 
+
+Si $K<3$, la distribution est \alert{moins aplatie} 
+
+On normalise parfois en considérant $K'=K-3$ (quantifie l'excès d'aplatissement)
+
+
+\end{frame}
+
+
+\section{Analyse Bivariée}
+
+\begin{frame}{Analyse bi-variée}
+
+
+Étudie la relation entre \alert{deux} variables (numériques ou qualitatives)
+
+
+
+
+\end{frame}
+
+
 
 
 

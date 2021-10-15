@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.7.16)  16 JUL 2021 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.7.16)  28 JUL 2021 11:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -645,6 +645,17 @@ Package: amsthm 2017/10/31 v2.20.4
 \beamer@dimb=\dimen276
 )
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+)
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write5
+
+Excluding comment 'comment')
 (/usr/share/texlive/texmf-dist/tex/latex/beamertheme-metropolis/beamerthememetr
 opolis.sty
 Package: beamerthememetropolis 2017/01/23 v1.2 Metropolis Beamer theme
@@ -772,7 +783,32 @@ Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 Package beamerthememetropolis Warning: You need to compile with XeLaTeX or LuaL
 aTeX to use the Fira fonts on input line 95.
 
-)) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+))
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 15.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 15.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 15.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 15.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 15.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 15.
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count323
 \l__pdf_internal_box=\box78
@@ -780,22 +816,22 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 (./ACP_Cours_1.aux)
 \openout1 = `ACP_Cours_1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -855,7 +891,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box80
-Package hyperref Info: Link coloring OFF on input line 50.
+Package hyperref Info: Link coloring OFF on input line 58.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -868,56 +904,56 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count330
 )
-LaTeX Info: Redefining \ref on input line 50.
-LaTeX Info: Redefining \pageref on input line 50.
-LaTeX Info: Redefining \nameref on input line 50.
+LaTeX Info: Redefining \ref on input line 58.
+LaTeX Info: Redefining \pageref on input line 58.
+LaTeX Info: Redefining \nameref on input line 58.
 
 (./ACP_Cours_1.out) (./ACP_Cours_1.out)
-\@outlinefile=\write5
-\openout5 = `ACP_Cours_1.out'.
+\@outlinefile=\write6
+\openout6 = `ACP_Cours_1.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 50.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 58.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 50.
-\symnumbers=\mathgroup6
-\sympureletters=\mathgroup7
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 58.
+\symnumbers=\mathgroup7
+\sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 50.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 50.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 50.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 50.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 58.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 50.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 50.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 50.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 58.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 50.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 50.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 50.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 58.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 50.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 50.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 58.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 50.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 58.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 50.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 50.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 50.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 50.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 50.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 50.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 58.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
 -English.dict
@@ -943,121 +979,126 @@ Dictionary: translator-numbers-dictionary, Language: English
 ry-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./ACP_Cours_1.nav)
-<img/logoENSG_big.png, id=25, 672.5125pt x 725.71124pt>
+<img/logoENSG_big.png, id=41, 672.5125pt x 725.71124pt>
 File: img/logoENSG_big.png Graphic file (type png)
 <use img/logoENSG_big.png>
-Package pdftex.def Info: img/logoENSG_big.png  used on input line 52.
+Package pdftex.def Info: img/logoENSG_big.png  used on input line 60.
 (pdftex.def)             Requested size: 56.90112pt x 56.89537pt.
 
-Overfull \vbox (192.60645pt too high) detected at line 52
+Overfull \vbox (192.60645pt too high) detected at line 60
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <14.4> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 52.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 52.
+(Font)              using `OT1/cmss/bx/n' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <12> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 52.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 60.
 
-
-Overfull \vbox (15.63992pt too high) detected at line 52
- []
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/logoENSG_big.png>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 54.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 60.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 60.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [2
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 60
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+Overfull \vbox (15.63992pt too high) detected at line 60
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/logoENSG_big.png>] [
+2
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-68.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
+76.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-<img/logoENSG_small.jpg, id=43, 322.20375pt x 157.58875pt>
+<img/logoENSG_small.jpg, id=59, 322.20375pt x 157.58875pt>
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 68.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 76.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [3
 
  <./img/logoENSG_small.jpg>]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 81.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 89.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [4
 
 ]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 89.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 100.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [5
 
 ]
-<img/pokemons.jpeg, id=61, 1405.25pt x 790.955pt>
+<img/pokemons.jpeg, id=77, 1405.25pt x 790.955pt>
 File: img/pokemons.jpeg Graphic file (type jpg)
 <use img/pokemons.jpeg>
-Package pdftex.def Info: img/pokemons.jpeg  used on input line 95.
+Package pdftex.def Info: img/pokemons.jpeg  used on input line 106.
 (pdftex.def)             Requested size: 307.28987pt x 172.96063pt.
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 95.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 106.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [6
 
  <./img/pokemons.jpeg>]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 113.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 124.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [7
 
 ]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 131.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 142.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [8
 
 ]
-<img/Attack_Defense.png, id=80, 586.44093pt x 321.45094pt>
+<img/Attack_Defense.png, id=96, 586.44093pt x 321.45094pt>
 File: img/Attack_Defense.png Graphic file (type png)
 <use img/Attack_Defense.png>
-Package pdftex.def Info: img/Attack_Defense.png  used on input line 136.
+Package pdftex.def Info: img/Attack_Defense.png  used on input line 147.
 (pdftex.def)             Requested size: 307.28987pt x 168.43564pt.
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 136.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 147.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [9
 
  <./img/Attack_defense.png (PNG copy)>]
-<img/Speed_HP.png, id=86, 535.2497pt x 360.59718pt>
+<img/Speed_HP.png, id=102, 535.2497pt x 360.59718pt>
 File: img/Speed_HP.png Graphic file (type png)
 <use img/Speed_HP.png>
-Package pdftex.def Info: img/Speed_HP.png  used on input line 142.
+Package pdftex.def Info: img/Speed_HP.png  used on input line 153.
 (pdftex.def)             Requested size: 307.28987pt x 207.02814pt.
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 142.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 153.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [10
 
@@ -1066,190 +1107,445 @@ Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 142.
 ]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 166.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 177.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [12
 
 ]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 177.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 187.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [13
 
 ]
+<img/inertie_1D.png, id=127, 492.1587pt x 166.9437pt>
+File: img/inertie_1D.png Graphic file (type png)
+<use img/inertie_1D.png>
+Package pdftex.def Info: img/inertie_1D.png  used on input line 208.
+(pdftex.def)             Requested size: 184.3758pt x 62.54004pt.
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 191.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 208.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
- [14
 
-]
+[14
+
+ <./img/inertie_1D.png>]
+<img/inertie_2D.png, id=134, 574.39594pt x 347.04657pt>
+File: img/inertie_2D.png Graphic file (type png)
+<use img/inertie_2D.png>
+Package pdftex.def Info: img/inertie_2D.png  used on input line 236.
+(pdftex.def)             Requested size: 107.55098pt x 64.98103pt.
+<img/inertie_2D_2.png, id=135, 574.39594pt x 347.04657pt>
+File: img/inertie_2D_2.png Graphic file (type png)
+<use img/inertie_2D_2.png>
+Package pdftex.def Info: img/inertie_2D_2.png  used on input line 236.
+(pdftex.def)             Requested size: 107.55098pt x 64.98103pt.
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 204.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 236.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+
+Overfull \vbox (6.28253pt too high) detected at line 236
+ []
 
 [15
 
-]
+ <./img/inertie_2D.png (PNG copy)> <./img/inertie_2D_2.png (PNG copy)>]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 215.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 249.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
- [16
+
+[16
 
 ] [17
 
 ]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 235.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 270.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [18
 
 ]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 250.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 283.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [19
 
 ]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 258.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 303.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [20
 
-] [21
-
 ]
+<img/exemple_2D.png, id=170, 578.16pt x 295.85532pt>
+File: img/exemple_2D.png Graphic file (type png)
+<use img/exemple_2D.png>
+Package pdftex.def Info: img/exemple_2D.png  used on input line 314.
+(pdftex.def)             Requested size: 307.28987pt x 157.24496pt.
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 287.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 314.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [21
+
+ <./img/exemple_2D.png (PNG copy)>]
+<img/exemple_2D_axes.png, id=176, 574.39594pt x 347.04657pt>
+File: img/exemple_2D_axes.png Graphic file (type png)
+<use img/exemple_2D_axes.png>
+Package pdftex.def Info: img/exemple_2D_axes.png  used on input line 324.
+(pdftex.def)             Requested size: 307.28987pt x 185.66542pt.
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 324.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [22
 
-]
+ <./img/exemple_2D_axes.png (PNG copy)>]
+<img/exemple_2D_arrivee.png, id=182, 574.39594pt x 347.04657pt>
+File: img/exemple_2D_arrivee.png Graphic file (type png)
+<use img/exemple_2D_arrivee.png>
+Package pdftex.def Info: img/exemple_2D_arrivee.png  used on input line 334.
+(pdftex.def)             Requested size: 307.28987pt x 185.66542pt.
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 295.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 334.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [23
 
-]
+ <./img/exemple_2D_arrivee.png (PNG copy)>]
+<img/exemple_2D_arrivee_axes.png, id=188, 574.39594pt x 347.04657pt>
+File: img/exemple_2D_arrivee_axes.png Graphic file (type png)
+<use img/exemple_2D_arrivee_axes.png>
+Package pdftex.def Info: img/exemple_2D_arrivee_axes.png  used on input line 34
+4.
+(pdftex.def)             Requested size: 307.28987pt x 185.66542pt.
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 308.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 344.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
- [24
 
-]
+[24
+
+ <./img/exemple_2D_arrivee_axes.png (PNG copy)>]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 327.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 365.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [25
 
 ]
-File: img/logoENSG_small.jpg Graphic file (type jpg)
-<use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 342.
-(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
- [26
+<img/schema_ACP.png, id=200, 2409.4818pt x 899.0388pt>
+File: img/schema_ACP.png Graphic file (type png)
+<use img/schema_ACP.png>
+Package pdftex.def Info: img/schema_ACP.png  used on input line 376.
+(pdftex.def)             Requested size: 307.28987pt x 114.65678pt.
 
-]
+Overfull \hbox (6.0pt too wide) in paragraph at lines 376--376
+ [][][][][][][] 
+ []
+
+[26
+
+ <./img/schema_ACP.png>]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 372.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 397.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [27
 
-] [28
-
 ]
+<img/exemple_2D_axe_eigen.png, id=212, 574.75906pt x 346.896pt>
+File: img/exemple_2D_axe_eigen.png Graphic file (type png)
+<use img/exemple_2D_axe_eigen.png>
+Package pdftex.def Info: img/exemple_2D_axe_eigen.png  used on input line 411.
+(pdftex.def)             Requested size: 245.83282pt x 148.37367pt.
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 389.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 411.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [28
+
+ <./img/exemple_2D_axe_eigen.png>]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 439.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [29
 
 ]
-File: img/logoENSG_small.jpg Graphic file (type jpg)
-<use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 389.
-(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
-
 [30
 
 ]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 389.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 460.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [31
 
 ]
+<img/scree_plot.png, id=237, 641.39626pt x 291.33844pt>
+File: img/scree_plot.png Graphic file (type png)
+<use img/scree_plot.png>
+Package pdftex.def Info: img/scree_plot.png  used on input line 477.
+(pdftex.def)             Requested size: 307.28987pt x 139.58302pt.
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 389.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 477.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [32
 
-] [33
+ <./img/scree_plot.png (PNG copy)>]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 492.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [33
 
 ]
 File: img/logoENSG_small.jpg Graphic file (type jpg)
 <use img/logoENSG_small.jpg>
-Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 402.
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 519.
 (pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
  [34
 
 ]
-\tf@nav=\write6
-\openout6 = `ACP_Cours_1.nav'.
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 538.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [35
 
-\tf@toc=\write7
-\openout7 = `ACP_Cours_1.toc'.
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 560.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [36
 
-\tf@snm=\write8
-\openout8 = `ACP_Cours_1.snm'.
+] [37
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 405.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 405.
+]
+<img/cercle_trigo_ACP_var.png, id=276, 376.40625pt x 378.66469pt>
+File: img/cercle_trigo_ACP_var.png Graphic file (type png)
+<use img/cercle_trigo_ACP_var.png>
+Package pdftex.def Info: img/cercle_trigo_ACP_var.png  used on input line 583.
+(pdftex.def)             Requested size: 138.2795pt x 139.10992pt.
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 583.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+
+Overfull \vbox (7.63795pt too high) detected at line 583
+ []
+
+[38
+
+ <./img/cercle_trigo_ACP_var.png>]
+File: img/cercle_trigo_ACP_var.png Graphic file (type png)
+<use img/cercle_trigo_ACP_var.png>
+Package pdftex.def Info: img/cercle_trigo_ACP_var.png  used on input line 604.
+(pdftex.def)             Requested size: 107.55333pt x 108.19789pt.
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 604.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [39
+
+]
+File: img/cercle_trigo_ACP_var.png Graphic file (type png)
+<use img/cercle_trigo_ACP_var.png>
+Package pdftex.def Info: img/cercle_trigo_ACP_var.png  used on input line 626.
+(pdftex.def)             Requested size: 107.55333pt x 108.19789pt.
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 626.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [40
+
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 641.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [41
+
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 653.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [42
+
+] [43
+
+]
+<img/cercle_trigo_ACP_ind.png, id=314, 574.39594pt x 347.04657pt>
+File: img/cercle_trigo_ACP_ind.png Graphic file (type png)
+<use img/cercle_trigo_ACP_ind.png>
+Package pdftex.def Info: img/cercle_trigo_ACP_ind.png  used on input line 674.
+(pdftex.def)             Requested size: 199.73653pt x 120.67908pt.
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 674.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+
+Overfull \vbox (8.49042pt too high) detected at line 674
+ []
+
+[44
+
+ <./img/cercle_trigo_ACP_ind.png (PNG copy)>]
+<img/exemple_2D_color_by_factor.png, id=320, 574.39594pt x 347.04657pt>
+File: img/exemple_2D_color_by_factor.png Graphic file (type png)
+<use img/exemple_2D_color_by_factor.png>
+Package pdftex.def Info: img/exemple_2D_color_by_factor.png  used on input line
+ 694.
+(pdftex.def)             Requested size: 199.73653pt x 120.67908pt.
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 694.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [45
+
+ <./img/exemple_2D_color_by_factor.png (PNG copy)>]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 716.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [46
+
+]
+<img/contribution_indiv_axe.png, id=331, 482.93364pt x 153.8926pt>
+File: img/contribution_indiv_axe.png Graphic file (type png)
+<use img/contribution_indiv_axe.png>
+Package pdftex.def Info: img/contribution_indiv_axe.png  used on input line 746
+.
+(pdftex.def)             Requested size: 104.47769pt x 33.2929pt.
+<img/contribution_indiv_axe2.png, id=332, 280.57765pt x 317.13777pt>
+File: img/contribution_indiv_axe2.png Graphic file (type png)
+<use img/contribution_indiv_axe2.png>
+Package pdftex.def Info: img/contribution_indiv_axe2.png  used on input line 74
+6.
+(pdftex.def)             Requested size: 92.18555pt x 104.19606pt.
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 746.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [47
+
+ <./img/contribution_indiv_axe.png> <./img/contribution_indiv_axe2.png>]
+<img/angle_qualite_repres_axe.png, id=340, 386.00682pt x 289.08pt>
+File: img/angle_qualite_repres_axe.png Graphic file (type png)
+<use img/angle_qualite_repres_axe.png>
+Package pdftex.def Info: img/angle_qualite_repres_axe.png  used on input line 7
+76.
+(pdftex.def)             Requested size: 125.37404pt x 93.89253pt.
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 776.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [48
+
+ <./img/angle_qualite_repres_axe.png>]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 790.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [49
+
+]
+[50
+
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 822.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [51
+
+]
+File: img/cercle_trigo_ACP_var.png Graphic file (type png)
+<use img/cercle_trigo_ACP_var.png>
+Package pdftex.def Info: img/cercle_trigo_ACP_var.png  used on input line 854.
+(pdftex.def)             Requested size: 107.55333pt x 108.19789pt.
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 854.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [52
+
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 872.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [53
+
+]
+File: img/logoENSG_small.jpg Graphic file (type jpg)
+<use img/logoENSG_small.jpg>
+Package pdftex.def Info: img/logoENSG_small.jpg  used on input line 886.
+(pdftex.def)             Requested size: 44.98038pt x 21.99994pt.
+ [54
+
+] Excluding 'comment' comment.
+\tf@nav=\write7
+\openout7 = `ACP_Cours_1.nav'.
+
+\tf@toc=\write8
+\openout8 = `ACP_Cours_1.toc'.
+
+\tf@snm=\write9
+\openout9 = `ACP_Cours_1.snm'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 906.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 906.
  (./ACP_Cours_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 405.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 405.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 906.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 906.
 Package rerunfilecheck Info: File `ACP_Cours_1.out' has not changed.
-(rerunfilecheck)             Checksum: 10188ED8D8F8C6B80F7B26B483082990;160.
+(rerunfilecheck)             Checksum: A8E035B26D488517419755596CFBFC10;515.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 21208 strings out of 483107
- 422812 string characters out of 5964630
- 656307 words of memory out of 5000000
- 35649 multiletter control sequences out of 15000+600000
- 541397 words of font info for 56 fonts, out of 8000000 for 9000
+ 21541 strings out of 483107
+ 428552 string characters out of 5964630
+ 658920 words of memory out of 5000000
+ 35899 multiletter control sequences out of 15000+600000
+ 546588 words of font info for 79 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 66i,13n,95p,1893b,755s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 66i,13n,95p,1893b,811s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss10
-95.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb>
-Output written on ACP_Cours_1.pdf (34 pages, 1235092 bytes).
+00.600pk> </home/paulchapron/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec
+/tcss1095.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cm
+ex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msam10.pfb>
+Output written on ACP_Cours_1.pdf (54 pages, 2110335 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 213 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
- 92 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 470 PDF objects out of 1000 (max. 8388607)
+ 357 compressed objects within 4 object streams
+ 116 named destinations out of 1000 (max. 500000)
+ 204 words of extra memory for PDF output out of 10000 (max. 10000000)
 

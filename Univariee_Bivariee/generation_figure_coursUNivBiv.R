@@ -112,3 +112,31 @@ ggplot(gauchedata, aes(x=value, y=dens))+geom_line(color="#44DD99", lwd=1.2)+
 ggsave("~/coursDESIGEO/cours_stats_DESIGEO/Univariee_Bivariee/img/asymetrie.png", device= "png",width = 800 , height = 400, units = "px", dpi=100)
 
 
+
+normaleC <- 1 
+picC <- 0.6
+plateC <- 3
+
+
+xx <- seq(-5,5, length.out = 100)
+normale <-  dnorm(xx,mean = 0, sd=normaleC)
+pic <-  dnorm(xx, mean = , sd=picC)
+plate <- dnorm(xx, mean=, sd=plateC)
+
+mydata <- data.frame(value=xx, dens=normale, type="Normale")
+piquee <- data.frame(value=xx, dens=pic, type="Leptokurtique")
+applatie <-  data.frame(value=xx, dens=plate, type="Platokurtique")
+
+
+mydata <- rbind(mydata, piquee)
+mydata <- rbind(mydata, applatie)
+
+ggplot(mydata, aes(x=value, y=dens))+geom_line(color="#44DD99", lwd=1.2)+
+  facet_grid(cols=vars(type), scales="free")+
+  ylab(label = "density")+
+  theme_light()
+ggsave("~/coursDESIGEO/cours_stats_DESIGEO/Univariee_Bivariee/img/aplatissement.png", device= "png",width = 900 , height = 400, units = "px", dpi=100)
+
+
+
+
