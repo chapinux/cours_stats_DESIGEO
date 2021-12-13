@@ -5,6 +5,13 @@
 \usepackage{comment}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{centernot}
+\usepackage{listings}
+\usepackage{framed}
+
+
+
+
 
 % config du thgeme metropolis
 \usetheme[progressbar=frametitle,block=fill, titleformat=smallcaps,sectionpage=progressbar,]{metropolis}
@@ -704,8 +711,365 @@ On normalise parfois en considérant $K'=K-3$ (quantifie l'excès d'aplatissemen
 \begin{frame}{Analyse bi-variée}
 
 
-Étudie la relation entre \alert{deux} variables (numériques ou qualitatives)
+Étude de  la relation entre \alert{deux} variables : 
 
+\begin{itemize}
+  \item quantitatives : \alert{corrélation, régression linéaire}
+  \item qualitatives : test d'indépendance du \alert{«Chi deux» / $\chi^2$}
+\end{itemize}
+
+\vspace{2cm}
+
+\begin{scriptsize}
+\begin{spacing}{0.75}
+Pour le lien entre une variable quantitative et une variable qualitative, on fera simplement un graphique.
+\end{spacing}
+\end{scriptsize}
+
+
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}{Corrélation $\neq$ Causalité }
+
+
+
+
+ Une liaison, même très forte, entre deux variables, n’indique pas la causalité. 
+
+\begin{figure}
+  \centering
+     \includegraphics[width=.9\linewidth]{img/spurious.png}
+\end{figure}
+
+Erreur très courante , très tentante. 
+
+\end{frame}
+
+
+\begin{frame} {Analyse bivariée avec des données spatiales}
+
+
+\begin{block}{\alert{Données «spatiales»}}
+
+Individus restreints spatialement (sélection spatiale)
+
+
+Variables “géographique” (e.g. lieu de résidence) renseignées pour les individus
+
+Prise en compte des distances $\rightarrow$ modèle(s) gravitaire(s) (hors programme)
+\end{block}
+
+\vspace{1cm}
+
+\begin{block}{Données localisées (hors programme pour nous)}
+
+    Auto-corrélation spatiale (Moran’s I, Geary Index)
+
+    Geographically Weighted Regression (GWR) $\approx$ régression linéaire avec prise en compte de la distance entre individus
+
+    Variogrammes 
+\end{block}
+
+\end{frame}
+
+
+
+\section{Corrélation}
+
+\begin{frame}{Avant toute chose}
+
+\alert{Toujours} afficher les données, avant de faire quoi que ce soit.
+
+
+
+\begin{figure}
+  \centering
+     \includegraphics[width=\linewidth]{img/correlation_examples2.png}
+\end{figure}
+
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{Corrélation de Pearson}
+
+
+La \alert{corrélation} indique l’\alert{intensité} du lien \alert {linéaire} entre deux variables quantitatives.
+
+
+
+
+
+$$cor(x,y)\in[-1;1]$$
+
+
+
+\begin{itemize}
+  \item $cor(x,y)\approx0$ : pas de relation (\alert{linéaire}) entre les deux variables
+
+  \item $cor(x,y)<0$  : les deux variables ont des sens de variations opposés
+  \item $cor(x,y)>0$  : les deux variables varient conjointement 
+
+  \item $cor(x,y)= \pm 1$ : variables parfaitement linéairement (anti-)corrélées, i.e. fonction affine l'une de l'autre. 
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Formule du coefficient de corrélation de Pearson }
+
+
+$$r= \frac{cov(x,y)}{\sigma_x\sigma_y}=\frac{E\big[(x-E(x))(y-E(y))  \big]}{\sigma_x\sigma_y}$$ 
+
+Avec : 
+
+\begin{itemize}
+  \item $r$ (parfois $\rho$) le coefficient de corrélation
+  \item $x$ et $y$ deux variables quantitatives
+  \item $E(x)$ l'espérance d'une variable $x$
+  \item $\sigma_x$ l'écart-type  d'une variable $x$
+  \item $cov(x,y)$ la covariance  de deux variables  $x$ et $y$
+\end{itemize}
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{Corrélation et indépendance }
+\begin{small}
+Deux variables indépendantes ont un coefficient de corrélation nul :
+$$ x \perp\!\!\!\!\perp y \implies  cor(x,y)=0  $$
+MAIS une corrélation nulle n'\alert{implique pas} l'indépendance des variables ! 
+$$cor(x,y)=0 \centernot \implies x \perp\!\!\!\!\perp y $$
+\end{small}
+D'autres liaisons sont possibles : 
+
+
+\begin{figure}
+\includegraphics[width=.32\linewidth]{img/sinus.png}
+\includegraphics[width=.33\linewidth]{img/flou.png}
+\includegraphics[width=.32\linewidth]{img/quadratic.png}
+\end{figure}
+
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Corrélation avec R }
+
+
+Fonction  $\texttt{cor(x,y)}$  pour obtenir la valeur du coefficient,
+
+Fonction $\texttt{cor.test(x,y)}$ pour obtenir  la \alert{p-value} et \alert{l'intervalle de confiance}. 
+
+
+Résultat :
+
+\begin{scriptsize}
+\begin{spacing}{0.75}
+\begin{lstlisting}[language=R,basicstyle=\footnotesize\ttfamily, commentstyle=\ttfamily]
+## 
+##  Pearson's product-moment correlation
+## 
+## data:  iris$Petal.Length and iris$Petal.Width
+## t = 43.387, df = 148, p-value < 2.2e-16
+## alternative hypothesis: true correlation
+## is not equal to 0
+## 95 percent confidence interval:
+##  0.9490525 0.9729853
+## sample estimates:
+##       cor 
+## 0.9628654
+\end{lstlisting}
+\end{spacing}
+\end{scriptsize}
+
+
+
+
+
+
+
+
+\begin{scriptsize}
+\begin{spacing}{0.75}
+R donne le coefficient de Pearson par défaut, l’argument  $\texttt{method}$ de la fonction cor() permet de spécifier deux autres coefficients : Kendall et Spearman.
+\end{spacing}
+\end{scriptsize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Matrice de Corrélation}
+
+Fonction $\texttt{cor()}$  appliquée à plusieurs variables de type $\texttt{numeric}$
+
+e.g. $\texttt{cor(iris[,1:4])}$
+
+
+Résultat: 
+
+\begin{tiny}
+\begin{spacing}{0.75}
+\begin{lstlisting}[language=R,basicstyle=\scriptsize\ttfamily, commentstyle=\ttfamily]
+##              Sepal.Length Sepal.Width Petal.Length Petal.Width
+## Sepal.Length    1.0000000  -0.1175698    0.8717538   0.8179411
+## Sepal.Width    -0.1175698   1.0000000   -0.4284401  -0.3661259
+## Petal.Length    0.8717538  -0.4284401    1.0000000   0.9628654
+## Petal.Width     0.8179411  -0.3661259    0.9628654   1.0000000
+\end{lstlisting}
+\end{spacing}
+\end{tiny}
+
+
+
+
+Présentation des corrélations entre les variables quantitatives d’un tableau, pour tous les couples de variables.
+
+La matrice de corrélation est symétrique, et sa diagonale est constituée de 1.
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Sensibilité aux outliers}
+
+
+
+\begin{tiny}
+\begin{spacing}{0.75}
+\begin{lstlisting}[language=R,basicstyle=\scriptsize\ttfamily, commentstyle=\ttfamily]
+X <-  c(3,2,3,4,1,2,3,4,5,2,3,4,3)
+Y <-  c(1,2,2,2,3,3,3,3,3,4,4,4,5)
+plot(X, Y, xlim = c(0,16), ylim= c(0,16))
+\end{lstlisting}
+\end{spacing}
+\end{tiny}
+
+
+
+
+\begin{figure}
+\includegraphics[width=.9\linewidth]{img/outlier1.png}
+\end{figure}
+
+
+
+\begin{tiny}
+\begin{spacing}{0.75}
+\begin{lstlisting}[language=R,basicstyle=\scriptsize\ttfamily, commentstyle=\ttfamily]
+>cor.test(X,Y)$estimate
+## cor 
+##   0
+\end{lstlisting}
+\end{spacing}
+\end{tiny}
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{Sensibilité aux outliers}
+
+
+
+\begin{tiny}
+\begin{spacing}{0.75}
+\begin{lstlisting}[language=R,basicstyle=\scriptsize\ttfamily, commentstyle=\ttfamily]
+X <-  c(3,2,3,4,1,2,3,4,5,2,3,4,3,15)
+Y <-  c(1,2,2,2,3,3,3,3,3,4,4,4,5,15)
+plot(X, Y, xlim = c(0,16), ylim= c(0,16))
+\end{lstlisting}
+\end{spacing}
+\end{tiny}
+
+
+
+
+\begin{figure}
+\includegraphics[width=.9\linewidth]{img/outlier2.png}
+\end{figure}
+
+
+
+\begin{tiny}
+\begin{spacing}{0.75}
+\begin{lstlisting}[language=R,basicstyle=\scriptsize\ttfamily, commentstyle=\ttfamily]
+>cor.test(X,Y)$estimate
+## cor 
+##   0.9052224
+\end{lstlisting}
+\end{spacing}
+\end{tiny}
+
+\end{frame}
+
+
+
+\begin{frame}{Outliers}
+
+
+\alert{Outlier} : observation “anormale”, par ses valeurs extrêmes, comparées aux autres.
+
+La corrélation (et la régression linéaire)) sont très sensibles aux outliers.
+
+$\rightarrow$ s’interroger sur la nécessité de nettoyer/filtrer les données et les conséquences
+
+$\rightarrow$ ne pas faire d’épuration brutale et aveugle
+
+\end{frame}
+
+
+
+\begin{frame}{Coefficient de corrélation de Spearman}
+
+
+
+Quand les deux variables semblent corrélées , de façon \alert{monotone} mais \alert{non linéaire},
+
+$\rightarrow$ utiliser le coefficient de \alert{Spearman}, basé sur le \alert{rang} des individus.
+
+
+$$\rho_S= \frac{cov(rg_x, rg_y)}{\sigma_{rg_x}\sigma_{rg_y}}$$
+
+
+Avec :
+\begin{itemize}
+  \item $rg_x$ le rang des individus selon la variable $x$  (en cas d'ex-aequo on prend le rang moyen)
+  \item $cov()$ la fonction de covariance
+  \item $\sigma_{rg_x}$ l'écart-type du rang $rg_x$
+\end{itemize}
+
+
+
+\end{frame}
+
+
+\section{Régression linéaire}
+
+\begin{frame}{Régression linéaire}
+
+
+\alert{Toujours} afficher les données, avant de faire quoi que ce soit.
+
+
+\alert{Si} le nuage de points semble «suffisament» linéaire , on peut tenter de décrire la relation statistique linéaire en proposant un \alert{modèle}
+
+$$\hat{y} = \alpha x + \beta$$
 
 
 
@@ -716,6 +1080,9 @@ On normalise parfois en considérant $K'=K-3$ (quantifie l'excès d'aplatissemen
 
 
 \begin{comment}
+
+
+
 
 \begin{frame}{Animation}
   \begin{itemize}[<+- | alert@+>]

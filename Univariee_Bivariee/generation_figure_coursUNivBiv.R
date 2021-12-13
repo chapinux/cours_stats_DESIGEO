@@ -140,3 +140,72 @@ ggsave("~/coursDESIGEO/cours_stats_DESIGEO/Univariee_Bivariee/img/aplatissement.
 
 
 
+
+cor(x,y5)
+
+ggplot(data2,aes(x=x, y=y4))+
+  geom_point(size =2, color = "#0FAF96", alpha=0.8)+
+  xlab("x")+
+  ylab("y")+
+  labs(title="r=-0.002466139")+
+  theme_light()
+
+ggsave("~/coursDESIGEO/cours_stats_DESIGEO/Univariee_Bivariee/img/sinus.png", device= "png",width = 900 , height = 400, units = "px", dpi=100)
+
+
+
+
+ggplot(data2,aes(x=x, y=y5))+
+  geom_point(size =2, color = "#0FAF96", alpha=0.8)+
+  xlab("x")+
+  ylab("y")+
+  labs(title="r=0.0380177")+
+  theme_light()
+
+ggsave("~/coursDESIGEO/cours_stats_DESIGEO/Univariee_Bivariee/img/flou.png", device= "png",width = 900 , height = 400, units = "px", dpi=100)
+
+
+
+cor(x,rnorm(100)*2+(x-5)^2) 
+
+ggplot(data2,aes(x=x, y=2*rnorm(100)+(x-5)^2))+
+  geom_point(size =2, color = "#0FAF96", alpha=0.8)+
+  xlab("x")+
+  ylab("y")+
+  labs(title="r=-0.0846620")+
+  theme_light()
+
+ggsave("~/coursDESIGEO/cours_stats_DESIGEO/Univariee_Bivariee/img/quadratic.png", device= "png",width = 900 , height = 400, units = "px", dpi=100)
+
+
+
+X <-  c(3,2,3,4,1,2,3,4,5,2,3,4,3)
+Y <-  c(1,2,2,2,3,3,3,3,3,4,4,4,5)
+ggplot(data.frame(X, Y), aes(x=X, y=Y))+
+  geom_point(size =2, color = "#0FAF96")+
+  scale_x_continuous(limits=c(0,16))+
+  scale_y_continuous(limits=c(0,16))+
+  theme_light()
+
+ggsave("~/coursDESIGEO/cours_stats_DESIGEO/Univariee_Bivariee/img/outlier1.png", device= "png",width = 900 , height = 400, units = "px", dpi=100)
+
+
+
+
+X <-  c(3,2,3,4,1,2,3,4,5,2,3,4,3,15)
+Y <-  c(1,2,2,2,3,3,3,3,3,4,4,4,5,15)
+ggplot(data.frame(X, Y), aes(x=X, y=Y))+
+  geom_point(size =2, color = "#0FAF96")+
+  scale_x_continuous(limits=c(0,16))+
+  scale_y_continuous(limits=c(0,16))+
+  theme_light()
+
+ggsave("~/coursDESIGEO/cours_stats_DESIGEO/Univariee_Bivariee/img/outlier2.png", device= "png",width = 900 , height = 400, units = "px", dpi=100)
+
+
+
+
+
+
+
+
