@@ -204,8 +204,60 @@ ggsave("~/coursDESIGEO/cours_stats_DESIGEO/Univariee_Bivariee/img/outlier2.png",
 
 
 
+regression <- lm(penguins$flipper_length_mm ~penguins$bill_length_mm * runif(nrow(penguins)))
+pvals <- coef(summary(regression))[,4]
+
+titre <- paste0("R2=", summary(regression)$adj.r.squared %>% round(3))
+soustitre <-  paste0("p-values associées à a : ",pvals[2] %>% signif(3), ", à b: ", pvals[1] %>% signif(3) )
+ggplot(penguins, aes(x=flipper_length_mm, y=bill_length_mm))+
+  geom_point(aes(color=species))+
+  geom_smooth(se=FALSE, method="lm", color="black")+
+  theme_light()+
+  labs(title=titre, subtitle = soustitre)
+ggsave("~/coursDESIGEO/cours_stats_DESIGEO/Univariee_Bivariee/img/reglin_example1.png", device= "png",width = 900 , height = 400, units = "px", dpi=100)
+
+nbpts <- 1000
+xx <-  runif(nbpts)
+yy <- 2*xx + 4 + runif(nbpts,-5,5) 
+df <-  data.frame(xx,yy)
+regression <- lm(df$yy ~ df$xx)
+pvals <- coef(summary(regression))[,4]
+str(regression)
+
+titre <- paste0("R2=", summary(regression)$adj.r.squared %>% round(3))
+soustitre <-  paste0("p-values associées à a : ",pvals[2] %>% signif(3), ", à b: ", pvals[1] %>% signif(3) )
+ggplot(df, aes(x=xx, y=yy))+
+  geom_point()+
+  geom_smooth(se=FALSE, method="lm")+
+  theme_light()+
+  labs(title=titre, subtitle = soustitre, x="Variable 1 ", y="Variable 2")
+
+
+ggsave("~/coursDESIGEO/cours_stats_DESIGEO/Univariee_Bivariee/img/reglin_example2.png", device= "png",width = 900 , height = 400, units = "px", dpi=100)
 
 
 
+
+
+x <- runif(100, min = 0, max=10)
+y1 <- 8.5*x - 23 + rnorm(100,0, 12)
+y2 <- -16*x +12 + rnorm(100,0,10)
+y3 <- sqrt(exp(x)) + rnorm(100,0,8)
+y4 <-  50*sin(x) + rnorm(100,0,10)
+y5 <-  rnorm(100, 0, 60)
+y6 <- 21.345
+data2 <-  data.frame(x, y1, y2, y3, y4, y5, y6)
+library(reshape2)
+library(ggplot2)
+data2 <- melt(data2, idvars=c("x"), measure.vars=c("y1","y2","y3","y4", "y5", "y6"))
+plo2 <-  ggplot(data2, aes(x=x, y=value))+
+  geom_point(size =1, color = "#0FAF96", alpha=0.8)+
+  facet_wrap(~variable)+
+  xlab("value of x variable")+
+  ylab("value of yi variable")
+plo2
+
+
+ggsave("~/coursDESIGEO/cours_stats_DESIGEO/Univariee_Bivariee/img/formes_dependances.png", device= "png",width = 900 , height = 400, units = "px", dpi=100)
 
 

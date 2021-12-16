@@ -1064,12 +1064,102 @@ Avec :
 \begin{frame}{Régression linéaire}
 
 
-\alert{Toujours} afficher les données, avant de faire quoi que ce soit.
+Rappel (encore): \alert{Toujours} afficher les données, avant de faire quoi que ce soit.
 
 
-\alert{Si} le nuage de points semble «suffisament» linéaire , on peut tenter de décrire la relation statistique linéaire en proposant un \alert{modèle}
+Quand le nuage de points semble «suffisamment» linéaire , on peut tenter de décrire la relation statistique linéaire en proposant un \alert{modèle}  linéaire 
 
 $$\hat{y} = \alpha x + \beta$$
+
+
+
+Le modèle retenu doit passer \alert{au mieux} (i.e. en minimisant une certaine erreur) dans le nuage de points.
+
+
+\end{frame}
+
+
+\begin{frame}{Diverses formes de dépendances}
+\begin{figure}
+\includegraphics[width=\linewidth]{img/formes_dependances.png}
+\end{figure}
+
+En pratique , les formes sont beaucoup moins régulières.
+
+\end{frame}
+
+
+
+
+\begin{frame}{Exemple}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{img/reglin_example1.png}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Exemple}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{img/reglin_example2.png}
+\end{figure}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Les étapes}
+
+\begin{enumerate}
+  \item Tracer le nuage de points
+  \item Existe-t-il une relation ? 
+  \item Si oui , Est-elle de forme linéaire ? 
+  \begin{enumerate}
+  \item Si oui  $\rightarrow$ faire une \alert{régression linéaire} 
+   \item Si non, la liaison est-elle monotone ou de forme connue ?
+   \begin{enumerate}
+   \item Si oui $\rightarrow$  Proposer un \alert{modèle} e.g. polynomial
+   \item Alternative: Réaliser un modèle \alert{LOESS} avec prudence (uniquement descriptif , aucun pouvoir de généralisation) cf le blog de Lise Vaudor \url{http://perso.ens-lyon.fr/lise.vaudor/regression-loess/}
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+
+
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}{Réaliser une régression linéaire avec R}
+
+
+La fonction $\texttt{lm()}$ réalise une régression linéaire entre deux (ou plusieurs) vecteurs numériques de même taille.
+
+
+L'objet résultat comporte plusieurs attributs, notamment : 
+
+\begin{itemize}
+  \item $\texttt{\$coefficients}$ les coefficients du modèle linéaire
+  \item  $\texttt{\$residuals}$ les résidus 
+\end{itemize}
+
+
+La fonction $\texttt{summary()}$ sur l'objet synthétise les résultats 
+
+
+\end{frame}
+
+
+
+\begin{frame}{Format des résultats}
+
+
 
 
 
@@ -1079,7 +1169,66 @@ $$\hat{y} = \alpha x + \beta$$
 
 
 
+\begin{frame}{le $R^2$}
+
+
+$$SSE = \sum_i (prediction_i - observation_i)^2$$
+
+$$SSE = \sum_i ( ax_i + b - x_i)^2$$
+
+$$SSE = \sum_i ( \hat{y_i}- x_i)^2$$
+
+
+Le **coefficient de détermination linéaire** ,  noté $R^2$  est une valeur qui décrit la **qualité de prédiction** de la régression,  c'est-à-dire à quel point la droite de régression estime correctement les valeurs de la variable expliquée.
+
+
+
+Il est défini par : 
+ $$R^2  = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y})^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}$$
+
+
+- $R^2 \in [0;1]$
+- Plus le $R^2$ est proche de 1, meilleure est la qualité.
+
+Pour avoir l'intuition de l'interprétation de cette formule, on peut remarquer que la fraction est un ratio entre la somme des résidus au carrés (écart entre valeurs observées $y_i$ et valeur prédite $\hat{y_i}$) et la variance (cf. section \@ref(variance)) de la variable expliquée ($y$).  
+
+Le dénominateur de la fraction est constant , il vaut $var(y)$
+Alors, intuitivement , pour un mauvais modèle, qui prédit mal les observations de $y$, la somme des résidus au carré sera importante, donc la fraction également, et la valeur de $R^2$  sera petite, proche de 0.
+De la même manière, pour un bon modèle, qui prédit bien les valeurs de $y$, les résidus seront faibles, donc leur somme quadratique également, ainsi que la valeur de la fraction, ce qui donnera un $R^2$ proche de 1.
+
+Mentalement , on peut réécrire la formule ainsi : 
+
+$$R^2 \approx 1- \frac{résidus^2}{variance\ de\ y}$$
+
+
+$$R^2 \approx 1- (erreur\ commise\ normalisée)$$
+
+
+$$R^2  =  \frac{\sum_{i=1}^{n} (\hat{y_i} -\bar{y} )^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}$$
+
+
+\end{frame}
+
+
 \begin{comment}
+\begin{frame}{Bonus: linéariser des relations }
+
+\url{https://www.umr-lastig.fr/paul-chapron/resources/cours_site/bivariee.html#lineariser}
+
+\end{frame}
+
+
+
+\begin{frame}{Bonus: Résidus de la régression }
+
+
+
+\url{https://www.umr-lastig.fr/paul-chapron/resources/cours_site/bivariee.html#residuslm}
+
+
+
+
+
 
 
 
