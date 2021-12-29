@@ -1079,6 +1079,9 @@ Le modèle retenu doit passer \alert{au mieux} (i.e. en minimisant une certaine 
 \end{frame}
 
 
+
+
+
 \begin{frame}{Diverses formes de dépendances}
 \begin{figure}
 \includegraphics[width=\linewidth]{img/formes_dependances.png}
@@ -1132,14 +1135,58 @@ En pratique , les formes sont beaucoup moins régulières.
 
 
 
+\begin{frame}[fragile]{Réaliser une régression linéaire}
+
+
+
+Si la forme du nuage de points s'y prête,  On cherche la droite qui «passe au mieux» (=\alert{ajustée}) dans le nuage de points de deux variables quantitatives $V_1$ et $V_2$. On pourra alors quantifier : 
+
+\begin{itemize}
+\item l'\alert{intensité} du lien / de la dépendance  : points proche de la droite ou non ?
+\item la \alert{forme} de la dépendance : linéaire ou non ?
+\item le \alert{sens} de la dépendance  : nulle, positive ou négative ?
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Vocabulaire de la regression}
+
+
+L'\alert{équation} de la droite  est un \alert{modèle linéaire} de la relation statistique qui lie $V_1$ et $V_2$; 
+
+Ici le modèle est :  $\hat{V_2}=aV_1+b$
+
+
+ \vspace{0.5cm}
+
+
+Si le modèle est retenu, alors pour un individu $i$ dont on connaît $V_1$, on infère la valeur $V_2$ par le modèle :    $\hat{V_{2i}} = aV_{1i} +b$
+ 
+ On dit aussi que $V_1$ \alert{explique} $V_2$ , ou que le modèle \alert{prédit} $V_2$ à partir de $V_1$ (on note les valeurs prédites $\hat{V_2}$)
+ 
+
+
+\end{frame}
 
 
 
 
-\begin{frame}{Réaliser une régression linéaire avec R}
+\begin{frame}[fragile]{Réaliser une régression linéaire avec R}
 
 
 La fonction $\texttt{lm()}$ réalise une régression linéaire entre deux (ou plusieurs) vecteurs numériques de même taille.
+
+\vspace{0.5cm}
+
+\begin{small}
+\begin{spacing}{0.75}
+\begin{lstlisting}[language=R,basicstyle=\scriptsize\ttfamily, commentstyle=\ttfamily]
+ result <- lm(penguins$flipper_length_mm ~ penguins$body_mass_g)
+\end{lstlisting}
+\end{spacing}
+\end{small}
+
 
 
 L'objet résultat comporte plusieurs attributs, notamment : 
@@ -1157,81 +1204,557 @@ La fonction $\texttt{summary()}$ sur l'objet synthétise les résultats
 
 
 
-\begin{frame}{Format des résultats}
+\begin{frame}[fragile]{Format des résultats obtenus avec summary}
 
 
 
+\begin{tiny}
+\begin{spacing}{0.75}
+\begin{lstlisting}[language=R,basicstyle=\scriptsize\ttfamily, commentstyle=\ttfamily]
+
+Call:
+lm(formula = penguins$flipper_length_mm ~ penguins$body_mass_g)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-23.7626  -4.9138   0.9891   5.1166  16.6392 
+
+Coefficients:
+                      Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          1.367e+02  1.997e+00   68.47   <2e-16 ***
+penguins$body_mass_g 1.528e-02  4.668e-04   32.72   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 6.913 on 340 degrees of freedom
+  (2 observations deleted due to missingness)
+Multiple R-squared:  0.759,	Adjusted R-squared:  0.7583 
+F-statistic:  1071 on 1 and 340 DF,  p-value: < 2.2e-16
+\end{lstlisting}
+\end{spacing}
+\end{tiny}
+
+
+\end{frame}
+
+\section{Qualité d'une regression}
+
+
+\begin{frame}{Comment évaluer la validité du modèle linéaire  ?}
+
+Il faut réunir deux conditions : 
+
+\begin{itemize}
+\item des coefficients avec des \alert{p-values} associées \alert{faibles} (e.g. <0.05)  $\leftrightarrow$ «on a peu de chances de se tromper»
+\item un $R^2$ élevé  $\leftrightarrow$ «le modèle prédit bien les observations»
+\end{itemize}
 
 
 \end{frame}
 
 
+\begin{frame}{Erreurs et  $R^2$}
 
 
-
-\begin{frame}{le $R^2$}
-
-
-$$SSE = \sum_i (prediction_i - observation_i)^2$$
-
-$$SSE = \sum_i ( ax_i + b - x_i)^2$$
-
-$$SSE = \sum_i ( \hat{y_i}- x_i)^2$$
-
-
-Le **coefficient de détermination linéaire** ,  noté $R^2$  est une valeur qui décrit la **qualité de prédiction** de la régression,  c'est-à-dire à quel point la droite de régression estime correctement les valeurs de la variable expliquée.
-
+Le \alert{coefficient de détermination linéaire} ,  noté $R^2$   décrit la \alert{qualité de prédiction} de la régression
 
 
 Il est défini par : 
  $$R^2  = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y})^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}$$
 
 
-- $R^2 \in [0;1]$
-- Plus le $R^2$ est proche de 1, meilleure est la qualité.
-
-Pour avoir l'intuition de l'interprétation de cette formule, on peut remarquer que la fraction est un ratio entre la somme des résidus au carrés (écart entre valeurs observées $y_i$ et valeur prédite $\hat{y_i}$) et la variance (cf. section \@ref(variance)) de la variable expliquée ($y$).  
-
-Le dénominateur de la fraction est constant , il vaut $var(y)$
-Alors, intuitivement , pour un mauvais modèle, qui prédit mal les observations de $y$, la somme des résidus au carré sera importante, donc la fraction également, et la valeur de $R^2$  sera petite, proche de 0.
-De la même manière, pour un bon modèle, qui prédit bien les valeurs de $y$, les résidus seront faibles, donc leur somme quadratique également, ainsi que la valeur de la fraction, ce qui donnera un $R^2$ proche de 1.
-
-Mentalement , on peut réécrire la formule ainsi : 
-
-$$R^2 \approx 1- \frac{résidus^2}{variance\ de\ y}$$
+\begin{itemize}
+\item $R^2 \in [0;1]$
+\item Plus le $R^2$ est proche de 1, meilleure est la qualité.
+\end{itemize}
 
 
-$$R^2 \approx 1- (erreur\ commise\ normalisée)$$
+\end{frame}
 
+
+
+
+
+\begin{frame}{$R^2$}
+
+
+
+
+$$R^2 \approx 1- \frac{residus^2}{variance\ de\ y\ *\ n}$$
+
+qu'on peut lire comme : 
+
+$$R^2 \approx 1- (erreur\ commise\ normalisee\ par\ la\ variation\ de\ la\ variable )$$
+
+également :
 
 $$R^2  =  \frac{\sum_{i=1}^{n} (\hat{y_i} -\bar{y} )^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}$$
 
+«la variation expliquée  sur la variation totale»
+
 
 \end{frame}
 
 
-\begin{comment}
-\begin{frame}{Bonus: linéariser des relations }
+
+
+
+
+
+\begin{frame}[fragile]{ p-value}
+
+
+La p-value peut s'interpréter comme «la probabilité d'avoir un résultat de régression identique avec deux variables véritablement indépendantes» 
+
+
+
+La p-value est associée à la notion d'\alert{hypothèse nulle}. 
+Ici , l'hypothèse nulle $H_0$ est: «les deux séries sont indépendantes». 
+
+la p-value est grosso-modo le  \alert{pourcentage de chances de se tromper} en rejetant l'hypothèse nulle, 
+
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{ l'Hypothèse nulle }
+
+$H_0$ : «les deux variables sont indépendantes»
+
+\begin{itemize}
+  \item \alert{conserver} $H_0$ : considérer les deux variables comme \alert{indépendantes}
+  \item \alert{rejeter} $H_0$ : considérer les deux variables comme \alert{dépendantes} i.e. ayant une relation statistique, un lien.
+\end{itemize}
+
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}[fragile]{La regression est-elle bonne ? }
+
+
+
+\begin{tiny}
+\begin{spacing}{0.75}
+\begin{lstlisting}[language=R,basicstyle=\scriptsize\ttfamily, commentstyle=\ttfamily]
+
+Call:
+lm(formula = penguins$flipper_length_mm ~ penguins$body_mass_g)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-23.7626  -4.9138   0.9891   5.1166  16.6392 
+
+Coefficients:
+                      Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          1.367e+02  1.997e+00   68.47   <2e-16 ***
+penguins$body_mass_g 1.528e-02  4.668e-04   32.72   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 6.913 on 340 degrees of freedom
+  (2 observations deleted due to missingness)
+Multiple R-squared:  0.759,	Adjusted R-squared:  0.7583 
+F-statistic:  1071 on 1 and 340 DF,  p-value: < 2.2e-16
+\end{lstlisting}
+\end{spacing}
+\end{tiny}
+
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{Critère de significativité du lien sur les résidus  }
+
+Quand "tout se passe bien" , les \alert{résidus} $\epsilon_i$  doivent:
+
+
+\begin{itemize}
+\item être indépendants  : covariance nulle ou très faible $cov(x_i, \epsilon_i) = 0$
+\item être distribués selon un loi normale de moyenne nulle $\epsilon \sim \mathscr{N}(0,\sigma_{\epsilon})$
+\item être distribués de façon homogène (homoscédasticité), i.e. de variance constante $var(\epsilon_i)=\sigma_{\epsilon}^2$ , indépendante de l'observation
+\end{itemize}
+
+ 
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Bonus }
+
+
+Linéariser des relations : 
 
 \url{https://www.umr-lastig.fr/paul-chapron/resources/cours_site/bivariee.html#lineariser}
 
+
+Interprétation des caractéristiques des résidus avec R  : 
+
+
+\url{https://www.umr-lastig.fr/paul-chapron/resources/cours_site/bivariee.html#residuslm}
+\end{frame}
+
+
+\section{Lien entre deux variables qualitatives}
+\begin{frame}{Représentation graphique}
+  
+  Pas de nuages de points, ni de droite de régression, mais on peut représenter la \alert{table de contingence} (fonction $\texttt{mosaicplot()}$
+ de R ) 
+ 
+  
+\begin{figure}
+  \centering
+     \includegraphics[width=.9\linewidth]{img/mosaic.png}
+\end{figure}
+  
+   
+\end{frame}
+
+
+\begin{frame}{Test d'indépendance du $\chi ^2$}
+
+
+
+Le test d'indépendance du $\chi ^2$  mesure l'\alert{écart}, la différence,  entre deux distributions de variables \alert{qualitatives}  
+
+Il répond à la question : «Existe-t-il un lien statistique entre deux séries de valeurs qualitatives ? »  
+
+(La réponse est de type  OUI/NON , le $\chi^2$ ne donne pas l'\alert{intensité} du lien)
+
+\begin{itemize}
+\item Hypothèse nulle $H_0$ : les deux distributions sont indépendantes.
+\item «faire le test» permet de conserver ou de rejeter $H_0$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Principe du $\chi ^2$}
+
+
+
+\begin{itemize}
+\item  On génère une \alert{population théorique} à laquelle on va comparer la \alert{population observée} .
+\item Cette distribution théorique reflète ce qui se passerait si on suppose que $H_0$ est vraie 
+\item À l'issue de la comparaison,  on pourra rejeter ou conserver $H_0$.
+\end{itemize}
+
+La construction de cette distribution se fait à partir du \alert{tableau de contingence}
+
+
+\end{frame}
+
+\begin{frame}{ Tableau de contingence}
+
+C'est un tableau à double entrée qui croise deux \alert{variables qualitatives}. 
+
+
+Dans une case on trouve l'\alert{effectif} (= le nombre) des individus caractérisés par la conjonction des modalités en ligne et en colonnes.
+
+
+Exemple sur des formes géométriques de couleurs :
+
+$$\begin{array}{c|c|c}
+   & blanc & noir \\ 
+   \hline
+carr\acute{e} &  22 &   12 \\ 
+  \hline
+  rond &   10 &  30 \\ 
+    \hline
+  triangle &  26 &   5 \\ 
+\end{array}$$
+
+
+Dans R : fonction $\texttt{table()}$.
+
+
+
+\end{frame}
+
+\begin{frame}{ Construction de la distribution théorique.}
+
+On commence par sommer les effectifs selon les modalités (en ligne et en colonne)
+
+$$\begin{array}{c|c|c|c}
+   & blanc & noir & \texttt{total}\\ 
+   \hline
+carr\acute{e} &  22 &   12 & 34\\ 
+  \hline
+  rond &   10 &  30 &  40  \\ 
+    \hline
+  triangle &  26 &   5 &  31\\
+  \hline
+  \texttt{total} & 58 & 47 & 105
+  \end{array}$$
+
+On appelle les sommes en lignes et en colonnes \alert{sommes marginales}, elles sont mises dans les "marges" du tableau.
+
+\end{frame}
+
+
+\begin{frame}{ Construction de la distribution théorique}
+
+En divisant par la taille de la population, on obtient les \alert{fréquences observées}.
+
+$$\begin{array}{c|c|c|c}
+   & blanc & noir & \texttt{total}\\ 
+   \hline
+carr\acute{e} &  0.20952381&  0.11428571 &  0.3238095\\ 
+  \hline
+  rond &    0.09523810 & 0.28571429 & 0.3809524  \\ 
+    \hline
+  triangle & 0.24761905 & 0.04761905 &   0.2952381\\
+  \hline
+  \texttt{total} &  0.552381 & 0.447619 & 1
+  \end{array}$$
+
+
+
+\vspace{0.5cm}
+
+\begin{small}
+On obtient les \alert{pourcentages de l'effectif} dans les cases du tableau.
+C'est également la \alert{probabilité} , qu'un individu de la population \alert{observée} soit caractérisé par les modalités en ligne et en colonne.
+\end{small}
+\end{frame}
+
+
+\begin{frame}{ Construction de la distribution théorique}
+
+
+$$\begin{array}{c|c|c|c}
+   & blanc & noir & \texttt{total}\\ 
+   \hline
+carr\acute{e} &  0.20952381&  0.11428571 &  \textbf{0.3238095}\\ 
+  \hline
+  rond &    0.09523810 & 0.28571429 & \textbf{0.3809524}  \\ 
+    \hline
+  triangle & 0.24761905 & 0.04761905 &   \textbf{0.2952381}\\
+  \hline
+  \texttt{total} &  \textbf{0.552381} & \textbf{0.447619} & 1
+  \end{array}$$
+
+
+De la même façon, les \alert{fréquences marginales} (marges divisées par la taille de la pop.), donnent la \alert{probabilité} d'observer un individu de la modalité correspondant à la ligne ou à la colonne considérée.
+
+\begin{tiny}
+\begin{spacing}{0.75}
+Exemple : dans cette population , j'ai 29.5\% de chances de tirer un triangle, et 55\% de chances de tirer une pièce blanche.
+\end{spacing}
+\end{tiny}
+
+
+\end{frame}
+
+
+\begin{frame}{ Construction de la distribution théorique}
+
+Rappel : 
+
+Probabilité conjointe de deux évènements $A$ et $B$ \alert{indépendants}  
+
+
+$P(A \cap B) = P(A) \times P(B)$
+
+\vspace{0.6cm}
+Si on suppose $H_0$ (l'indépendance des variables) , on obtient pour chaque couple de modalités, sa probabilité \alert{théorique}, par le \alert{produit des fréquences marginales }
+
+
+\vspace{0.6cm}
+\begin{tiny}
+\begin{spacing}{0.85}
+Exemple :  Si $H_0$ est vraie, la probabilité d'observer un triangle noir est donnée par: 
+
+$P(triangle \cap noir) = P(triangle) \times P(noir)$
+
+$P(triangle \cap noir) =0.447619 \times 0.2952381  = 0.1321542$
+
+La probabilité théorique d'observer un triangle noir est de 13,2\%  
+\end{spacing}
+\end{tiny}
+
+\end{frame}
+
+
+\begin{frame}{ Construction de la distribution théorique}
+
+On crée un \alert{second tableau}, dont chaque case vaut le produit des fréquences marginales calculées sur le tableau des observations.
+
+$$\begin{array}{c|c|c|c}
+   & blanc & noir & \texttt{total}\\ 
+   \hline
+carr\acute{e} &  0.1788662 &   0.1449433 &  \textbf{0.3238095}\\ 
+  \hline
+  rond &    0.2104309 &0.1705215 & \textbf{0.3809524}  \\ 
+    \hline
+  triangle &  0.1630839 & 0.1321542 &   \textbf{0.2952381}\\
+  \hline
+  \texttt{total} &  \textbf{0.552381} & \textbf{0.447619} & 1
+  \end{array}$$
+
+C'est le tableau des \alert{fréquences théoriques}.
+
+
+\end{frame}
+
+
+\begin{frame}{ Tableau des effectifs théoriques}
+
+On l'obtient en multipliant les fréquences théoriques par la taille de la population observée (ici 105)
+
+
+$$\begin{array}{c|c|c}
+   & blanc & noir \\ 
+   \hline
+carr\acute{e} &  18.78095 &  15.21905 \\ 
+  \hline
+  rond &   22.09524 & 17.90476    \\ 
+    \hline
+  triangle & 17.12381 & 13.87619   \\
+  \end{array}$$
+
+\begin{tiny}
+N.B. Il n'est pas nécessaire d'arrondir les effectifs théoriques
+\end{tiny}
+
+
+\end{frame}
+
+
+\begin{frame}{ Calcul du $\chi^2$ }
+
+C'est la somme, pour chaque couple de modalités,  des écarts carrés entre effectif observé et effectif théorique, divisés par l'effectif théorique.
+
+Soient $T^{obs}$ le tableau des effectifs observés, $T^{theo}$ le tableau des effectifs théoriques, 
+
+
+$$\chi^2 =  \sum_{i,j}  \frac{( T^{obs}_{i,j} -  T^{theo}_{i,j})^2}{T^{obs}_{i,j}}$$       
+
+
+\begin{tiny}
+Dans notre exemple : $\chi^2 = 26.30329$
+\end{tiny}
+\end{frame}
+
+
+\begin{frame}{ Interprétation du $\chi^2$ }
+
+on compare la valeur du $\chi^2$ calculée avec la \alert{valeur critique} qu'on trouve   dans une \alert{table de loi de Student}.
+
+C'est un tableau à double entrée : une \alert{valeur de quantile}, et un \alert{degré de liberté}.
+
+La valeur de quantile est le pourcentage d'erreur qu'on s'autorise.  On prend souvent \alert{5\%} : ou, en fonction des tables , la valeur 1-0.05 =  0.95
+
+Le degré de liberté est obtenu en calculant la valeur $(nb\_lignes - 1)*(nb\_colonnes -1)$.
+
+
+\begin{tiny}
+Dans notre exemple , le degré de liberté est 2*1 = 2
+\end{tiny}
+
+\end{frame}
+
+
+\begin{frame}{Table de loi de student}
+
+
+
+\end{frame}
+
+
+\begin{frame}{Interprétation du $\chi^2$}
+
+
+D'après le tableau de la loi de Student , la valeur critique pour un test avec 5\% de chances de se tromper est un degré de liberté de 2 vaut 4.303.
+
+Si la valeur calculée du $\chi^2$ est \alert{supérieure} à la valeur critique, on \alert{rejette} $H_0$.
+
+
+
+Pour notre exemple: On rejette $H_0$, i.e. les deux variables sont \alert{dépendantes},  car $\chi ^2 \approx 26 > 4.303$
+
+Interprétation: «la forme est liée à la couleur dans cette population, nous pouvons l'affirmer avec un risque d'erreur de  5\%»
+
+\end{frame}
+
+
+\begin{frame}{Les étapes du $\chi ^2$}
+
+\begin{enumerate}
+\item Tableau de contingence
+\item Sommes marginales 
+\item Calcul des fréquences observées 
+\item Calcul des fréquences théoriques
+\item Tableau d'effectifs théoriques
+\item Calcul de la valeur du test 
+\item Comparaison avec les valeurs de la table de Student 
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{$\chi ^2$ avec R }
+
+Fonction  $\texttt{chisq.text()}$
+
+R calcule pour nous une  p-value du test de Student associé au $\chi^2$ $\rightarrow$ on utilise la p-value directement pour conserver ou non $H_0$ si elle est inférieur à la valeur de rejet désirée (e.g. 5\%).
+
+\vspace{0.6cm}
+
+\begin{scriptsize}
+\begin{spacing}{0.75}
+\begin{lstlisting}[language=R,basicstyle=\footnotesize\ttfamily, commentstyle=\ttfamily]
+>chisq.test(penguins$species, penguins$island)
+#
+#	Pearson's Chi-squared test
+#
+#data:  penguins$species and penguins$island
+#X-squared = 299.55, df = 4, p-value < 2.2e-16
+\end{lstlisting}
+\end{spacing}
+\end{scriptsize}
+\end{frame}
+
+
+\begin{frame}[fragile]{$\chi ^2$ avec R }
+
+Plusieurs attributs de l'objet résultat du test 
+
+\vspace{0.6cm}
+
+\begin{scriptsize}
+\begin{spacing}{0.75}
+\begin{lstlisting}[language=R,basicstyle=\footnotesize\ttfamily, commentstyle=\ttfamily]
+#>mon_resultat <- chisq.test(X, Y)
+\end{lstlisting}
+\end{spacing}
+\end{scriptsize}
+
+\vspace{0.6cm}
+
+
+\begin{itemize}
+\item $\texttt{mon\_resultat\$statistic}$ : la statistique du Chi2.
+\item $\texttt{mon\_resultat\$parameter}$: le nombre de degrés de libertés.
+\item $\texttt{mon\_resultat\$p.value}$ : la p-value.
+\item $\texttt{mon\_resultat\$observed}$: la distribution observée
+\item $\texttt{mon\_resultat\$expected}$ : la distribution théorique 
+\end{itemize}
+
 \end{frame}
 
 
 
-\begin{frame}{Bonus: Résidus de la régression }
 
 
-
-\url{https://www.umr-lastig.fr/paul-chapron/resources/cours_site/bivariee.html#residuslm}
-
-
-
-
-
-
-
-
+\begin{comment}
 
 \begin{frame}{Animation}
   \begin{itemize}[<+- | alert@+>]

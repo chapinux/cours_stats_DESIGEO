@@ -261,3 +261,28 @@ plo2
 ggsave("~/coursDESIGEO/cours_stats_DESIGEO/Univariee_Bivariee/img/formes_dependances.png", device= "png",width = 900 , height = 400, units = "px", dpi=100)
 
 
+
+library(palmerpenguins)
+res <-  lm(penguins$flipper_length_mm ~ penguins$body_mass_g)
+summary(res)
+
+
+
+
+library(RColorBrewer)
+mypalette <-  brewer.pal(3,"Dark2")
+dev.off()
+mosaicplot(~Class+Survived, data=Titanic, color=mypalette,main = "")
+
+
+Titanic~Class+Survived
+
+
+tt <- chisq.test(penguins$species, penguins$island)
+tt$statistic
+tt$p.value
+
+library(corrplot)
+corrplot(tt$residuals, is.cor = FALSE)
+
+
