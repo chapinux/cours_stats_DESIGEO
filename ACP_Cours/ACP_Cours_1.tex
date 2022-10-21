@@ -84,9 +84,13 @@ La plupart des phénomènes intéressants (sociaux, spatiaux) sont \alert{multi-
 \begin{itemize}
 	\item partiellement \alert{redondantes}  :   e.g. revenu et profession
 	\item intrinsèquement \alert{corrélées} : e.g. revenu et taille du logement
+  \item répétées : e.g. données mensuelles ou hebdomadaires
 	\item parfois des proportions (somme à 1 ou 100\%)
 \end{itemize}
 \end{frame}
+
+
+
 
 \begin{frame}{Quoi et Comment}
 L'analyse \alert{factorielle}  cherche à réduire la \alert{colinéarité} et le \alert{nombre de dimensions} (=variables) qui décrivent une population ... 
@@ -99,6 +103,21 @@ L'analyse \alert{factorielle}  cherche à réduire la \alert{colinéarité} et l
 ... en proposant de nouvelles variables \alert{composites décorrélées}.
 \end{frame}
 
+
+\begin{frame}{À quoi ça sert ?}
+
+\begin{itemize}
+  \item à identifier les \alert{ressemblances} entre \alert{individus}, à les \alert{regroupper} en fonction de cette ressemblance
+  \item à identifier les \alert{ressemblances} entre \alert{variables} (liaisons)
+\end{itemize}
+
+
+$\implies$ résumé de l'information contenue dans les données, pour la restituer \alert{fidèlement} (i.e. sans trop les déformer).
+
+\end{frame}
+
+
+\section{Pokemons}
 
 \begin{frame}{Une population}
 \centering
@@ -159,7 +178,7 @@ i.e. comment \alert{combiner} les six variables numériques pour bien \alert{exp
 
 
 \begin{frame}{L'inertie}
-L'inertie est l'équivalent \alert{multi-dimensionnel} de la \alert{variance} d'une variable.
+L'inertie est l'équivalent \alert{multi-dimensionnel} de la \alert{variance} d'une variable. C'est la \alert{dispersion} des données.
 
 
 C'est une notion centrale de l'ACP.
@@ -565,7 +584,7 @@ De cette projection on tire beaucoup d'information utiles:
 
 
 \begin{itemize}
-\item \alert{corrélations} de variables
+\item \alert{corrélations} de variables (si elle sont bien représentées ! )
 \item \alert{contribution / représentation}  des variables 
 \item \alert{contribution / représentation} des individus 
 \item \alert{regroupements} d'individus, individus extrêmes
@@ -893,6 +912,8 @@ La \alert{malédiction de la dimensionnalité} (curse of dimensionality) peut nu
 \begin{itemize}
 \item \href{http://www.sthda.com/french/articles/38-methodes-des-composantes-principales-dans-r-guide-pratique/73-acp-analyse-en-composantes-principales-avec-r-l-essentiel}{\color{cyan}{Page ACP STDHA}}
 \item \href{https://gitlab.huma-num.fr/hcommenges/cours_statcomplet}{\color{cyan}{Cours d'Hadrien Commenges}}
+\item \href{https://www.youtube.com/watch?v=8qw0bNfK4H0}{\color{cyan}{Cours vidéo de François Husson}}
+
 \end{itemize}
 
 
