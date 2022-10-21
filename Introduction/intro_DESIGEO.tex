@@ -84,7 +84,7 @@
 \hfill «Data scientist (noun): Person who is better at statistics than any software engineer and better at software engineering than any statistician.»\\
 \hfill Josh Wills\\
 \vfill
-\hfill «There are lies, damned lies and statistics» \\
+\hfill «There are three kinds of falsehoods: lies, damned lies and statistics» \\
 \hfill Mark Twain\\ 
 \vfill
 
@@ -150,22 +150,11 @@ En général, les probabilités servent à  \alert{prédire} des états futurs.
 \end{itemize}
 
 
-Nous couvrirons principalement l'analyse spatiale \alert{statistique} qui utilisent de nouvelles variables : les coordonnées des objets et les distances  qui les séparent.
+Nous couvrirons principalement l'analyse spatiale \alert{statistique} i.e. prenant en compte les coordonnées des unités statistiques et différentes distances.
 \end{frame}
 
 
 
-
-
-
-\begin{frame}
-\frametitle{Programme du module}
-
-
-\centering
-\includegraphics[width=\textwidth,keepaspectratio]{img/agenda2022.png}
-
-\end{frame}
 
 
 \setbeamercolor{background canvas}{bg=white}
@@ -213,4 +202,311 @@ Nous couvrirons principalement l'analyse spatiale \alert{statistique} qui utilis
 \end{itemize}
 \end{frame}
 
+
+\section{Le module}
+
+
+
+\begin{frame}
+\frametitle{L'outillage}
+
+
+Support, TP, et assistance pour R et RStudio.
+
+
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Programme du module}
+
+
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/agenda2022.png}
+
+\end{frame}
+
+
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Tropes de la statistique}
+
+
+Pendant la WW2, la Royal Air Force  voulait blinder ses avions contre la flotte et la DCA allemande. Blinder tout l'appareil est impossible car trop lourd. 
+
+\alert{Où} blinder les avions ? 
+
+
+On collecte des données : la localisation impacts de shrapnels  et de balles des avions \alert{rentrés} à la base en Angleterre. 
+\end{frame}
+
+
+
+
+
+\section{Tropes de la statistique}
+
+
+\begin{frame}
+\frametitle{L'avion}
+
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/plane.png}
+
+
+
+
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{L'avion anglais de la WW2}
+
+
+
+$\rightarrow$ il faut blinder l'arrière et les ailes ! 
+
+Mais ... 
+\pause
+il faut prendre en compte le \emph{\alert{biais du survivant} }
+
+\pause
+
+Les données proviennent d'avions qui sont \alert{rentrés} à la base.  
+Ceux qui ont été touchés gravement ont péri, leurs impacts ne sont \alert{pas} dans les données.
+
+Hypothèse :  les impacts sont uniformes sur les avions, \alert{mais} les avions rentrés le sont peut-être du fait que les impacts ont causé peu de dommages sur l'avion, leur permettant de rentrer.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{L'avion anglais de la WW2}
+
+
+$\rightarrow$ il faut blinder le cockpit et les moteurs.
+
+Ce qu'ils ont fait, avec succès (beaucoup moins de pertes).
+
+
+\centering
+\includegraphics[width=0.7\textwidth,keepaspectratio]{img/plane.png}
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Spurious correlations}
+
+
+
+\centering
+\includegraphics[width=0.8\textwidth,keepaspectratio]{img/spurious_corr.png}
+\vfill
+\includegraphics[width=0.8\textwidth,keepaspectratio]{img/spurious_corr2.png}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Les "chiffres"}
+
+
+Sur les mêmes chiffres du bilan d’une entreprise en 2013 et 2014
+
+    \begin{itemize} 
+    \item Mme. AAA : «tous les salaires ont baissé de 10\%»
+    \item M. BBB : «le salaire moyen a augmenté d’environ 18\%»
+  \end{itemize}
+  
+\begin{table}[]
+\begin{tabular}{|l|r|r|}
+\hline
+\textbf{} & \textbf{Ouvriers} & \textbf{Cadres} \\ \hline
+2013      & effectif : 500    & effectif : 100  \\ \hline
+          & salaire : 1300    & salaire :2200   \\ \hline
+2014      & effectif : 200    & effectif : 400  \\ \hline
+          & salaire :1170     & salaire : 1980  \\ \hline
+\end{tabular}
+\end{table}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La fragilité  de la moyenne}
+
+
+Salaire moyen en 2020 EQTP (hors Mayotte) : 2518€ 
+
+\centering
+\includegraphics[width=0.7\textwidth,keepaspectratio]{img/salaire.png}
+
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{La fragilité de la moyenne}
+
+«Quand les distributions sont \alert{unimodales et symétriques}, tout va bien.» \\
+
+Sinon, agir avec précaution !  
+
+\end{frame}
+
+
+\section{Représenter les données}
+
+
+\begin{frame}
+\frametitle{La première chose à faire}
+
+Toujours «jeter un oeil» aux données.  A fortiori si elles sont spatiales ! 
+
+\begin{itemize}
+ \item identification des tendances, des motifs
+ \item complétude 
+ \item outliers
+\end{itemize}
+
+Visualiser \alert{avant} : analyse visuelle exploratoire  et \\ 
+Visulaiser  \alert{après}  :restituition/diffusion  des résultats des traitements 
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Mais il faut le faire bien}
+
+\alert{Toujours}
+
+\begin{itemize}
+  \item étiqueter les axes (unités)
+  \item fournir une légende complète 
+  \item choisir des classes de valeurs et de couleurs sensées
+  \item penser au support de diffusion 
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Critère de réussite}
+
+\alert{«Self explanatory»} : Si on se demande quoi voir ou comment lire, c'est raté. Si c'est moche, trop petit, peu lisible, idem.
+
+
+\vspace{1cm}
+
+
+$\implies$Faites simple 
+
+\end{frame}
+
+
+
+\section{Exemples réussis}
+
+
+
+
+\begin{frame}
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/minard.png}
+\end{frame}
+
+
+
+\begin{frame}
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/bon_exemple.png}
+\end{frame}
+
+
+\begin{frame}
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/bon_exemple2.png}
+\end{frame}
+
+\begin{frame}
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/bon_exemple3.jpg}
+\end{frame}
+
+
+\begin{frame}
+\centering
+\includegraphics[width=0.75\textwidth,keepaspectratio]{img/bon_exemple4.png}
+
+\tiny{source : \url{https://twitter.com/PhysRevLett/status/697815592062074881} }
+\end{frame}
+
+
+
+
+\begin{frame}
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/carto_suisse.png}
+\end{frame}
+
+
+
+\begin{frame}
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/good_viz.png}
+
+\end{frame}
+
+
+
+
+
+
+\section{Musées des horreurs}
+
+
+
+ \begin{frame}\centering\includegraphics[width=\textwidth,keepaspectratio]{graphcrimes/DLckOPNWAAA0cy4.jpeg}\end{frame}
+ \begin{frame}\centering\includegraphics[width=\textwidth,keepaspectratio]{graphcrimes/DTyVpdiV4AAnVov.jpeg}\end{frame}
+ \begin{frame}\centering\includegraphics[width=\textwidth,keepaspectratio]{graphcrimes/DXfpXfmX0AAgMrS.jpeg}\end{frame}
+ \begin{frame}\centering\includegraphics[width=\textwidth,keepaspectratio]{graphcrimes/FaYCYQFWQAAm3DB.jpeg}\end{frame}
+ \begin{frame}\centering\includegraphics[width=0.7\textwidth,keepaspectratio]{graphcrimes/FN8ErPaXwAIEdO3.png}\end{frame}
+ \begin{frame}\centering\includegraphics[width=\textwidth,keepaspectratio]{graphcrimes/FQHLjS5XwAY4pp1.jpeg}\end{frame}
+ \begin{frame}\centering\includegraphics[width=\textwidth,keepaspectratio]{graphcrimes/FRSll9GWYAMyYZR.jpeg}\end{frame}
+ \begin{frame}\centering\includegraphics[width=\textwidth,keepaspectratio]{graphcrimes/FRUFGM4WUAEq35D.jpeg}\end{frame}
+ \begin{frame}\centering\includegraphics[width=\textwidth,keepaspectratio]{graphcrimes/FSiH5AwXoAA8w23.jpeg}\end{frame}
+ \begin{frame}\centering\includegraphics[width=0.7\textwidth,keepaspectratio]{graphcrimes/FSP19zkXIAAiUmi.png}\end{frame}
+ \begin{frame}\centering\includegraphics[width=0.7\textwidth,keepaspectratio]{graphcrimes/FTME9qxWQAIZLbe.jpeg}\end{frame}
+ \begin{frame}\centering\includegraphics[width=0.9\textwidth,keepaspectratio]{graphcrimes/FVdSWe5XsAAYJGH.jpeg}\end{frame}
+ \begin{frame}\centering\includegraphics[width=\textwidth,keepaspectratio]{graphcrimes/FX7LWekXEAIr0lP.jpeg}\end{frame}
+ \begin{frame}\centering\includegraphics[width=\textwidth,keepaspectratio]{graphcrimes/FXBQtakXEAAFVc7.png}\end{frame}
+ \begin{frame}\centering\includegraphics[width=\textwidth,keepaspectratio]{graphcrimes/FXz7CxPVQAAJVuL.jpeg}\end{frame}
+ \begin{frame}\centering\includegraphics[width=0.9\textwidth,keepaspectratio]{graphcrimes/FYi_zJZVEAAxFW9.jpeg}\end{frame}
+ \begin{frame}\centering\includegraphics[width=\textwidth,keepaspectratio]{graphcrimes/FZwXuJjX0AEhyz-.jpeg}\end{frame}
+
+
+
+
 \end{document}
+
