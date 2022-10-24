@@ -178,11 +178,11 @@ Lorsque la variable prend des valeurs réelles, on parle de \alert{densité de p
      \includegraphics[width=.7\linewidth]{img/histo_dens.png}
 \end{figure}
 
-\begin{small}
+\begin{scriptsize}
 \begin{spacing}{0.75}
-\alert{N.B.} En toute rigueur, représenter une courbe de distribution de probabilité par dessus un histogramme est impropre : il faudrait deux graphiques distincts, ou au moins deux axes des ordonnées: un pour l’histogramme, représentant un effectif, l’autre pour la distribution , représentant une probabilité 
+\alert{N.B.} En toute rigueur, représenter une courbe de distribution de probabilité par dessus un histogramme est impropre : il faudrait deux graphiques distincts, ou au moins deux axes des ordonnées: un pour l’histogramme, représentant un effectif, l’autre pour la distribution , représentant une probabilité.
 \end{spacing}
-\end{small}
+\end{scriptsize}
 
 \end{frame}
 
@@ -196,7 +196,7 @@ Parfois , les distributions empiriques ressemblent à celles de lois de probabil
 
 $\rightarrow$ on peut alors  \alert{modéliser}  la  variable par une variable aléatoire de loi fixée
 
-$\rightarrow$ les paramètres de cette loi doivent être déterminés (ajustement).
+$\rightarrow$ les paramètres de cette loi doivent être déterminés (par \alert{ajustement}).
 
 
 \end{frame}
@@ -256,22 +256,33 @@ La tendance centrale est \alert{une} valeur qui \alert{résume} une série de va
 $$ \bar{x} = \frac{1}{n}\sum_{i=0}^{n} x_i$$
 
 
+
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}
+\begin{block}{Avantages}
+Chaque valeur compte
+\end{block}
+\column{0.4\textwidth}
+\metroset{block=fill}
+\begin{block}{Inconvénients}
 \begin{spacing}{0.9}
-\begin{small}
-Avantage  : chaque valeur compte  \\
-Inconvénients : \\ 
 \begin{itemize}
   \item sensibilité aux valeurs extrêmes 
   \item pas de signification sur les valeurs discrètes (e.g. 2.5 enfants par foyer)
 \end{itemize}
+\end{spacing}
+\end{block}
+\end{columns}
 
+
+\begin{spacing}{0.9}
+\begin{small}
 Pour y remédier (parfois): \\
 $\rightarrow$ exclure les outliers\\
 $\rightarrow$ utiliser un autre estimateur (médiane)\\
 $\rightarrow$ étudier la distribution des valeurs (e.g. cas bimodal) et opérer une classification
 \end{small}
 \end{spacing}
-
 \end{frame}
 
 
@@ -291,17 +302,30 @@ Moins sensible que la moyenne classique aux valeurs extrêmes.
 
 
 Le \alert{mode} d’une variable est la valeur la plus \alert{fréquente} ( d’effectif maximum) d’une variable.
+
+
+
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}
+\begin{block}{Avantages}
 \begin{spacing}{0.9}
-\begin{small}
-Avantages  : 
 \begin{itemize}
   \item peu sensible aux valeurs extrêmes 
   \item interprétation  simple : cas le plus fréquent
-\end{itemize}  
-Inconvénient :  la valeur du mode ne dépend pas de toutes les observations, la modification d'une valeur n'entraîne pas la modification du mode (ce qui explique sa robustesse aux valeurs extrêmes)
-
-\end{small}
+\end{itemize}
 \end{spacing}
+\end{block}
+\column{0.4\textwidth}
+\metroset{block=fill}
+\begin{block}{Inconvénients}
+\begin{spacing}{0.9}
+Ne dépend pas de toutes les observations (ce qui explique sa robustesse aux valeurs extrêmes)
+\end{spacing}
+\end{block}
+\end{columns}
+
+
+
 
 \end{frame}
 
@@ -348,19 +372,28 @@ La \alert{médiane} est la valeur qui sépare une population en \alert{deux} cla
 C'est la valeur la plus proche de toutes les autres.
 
 
+
+
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}
+\begin{block}{Avantages}
 \begin{spacing}{0.9}
-\begin{small}
-Avantages  : 
 \begin{itemize}
 \item Souvent plus pertinente que la moyenne
 \item les valeurs extrêmes ne modifient pas sa valeur
 \item interprétation  facile: un individu sur deux a une valeur inférieure (respectivement supérieure) à la médiane.
 \end{itemize}
-\end{small}
 \end{spacing}
+\end{block}
+\column{0.4\textwidth}
+\metroset{block=fill}
+\begin{block}{Inconvénients}
+\begin{spacing}{0.9}
+Comme le mode , la médiane ne dépend pas de toutes les observations.
+\end{spacing}
+\end{block}
+\end{columns}
 
-
-Inconvénient : Comme le mode , la médiane ne dépend pas de toutes les observations 
 
 \begin{tiny}
 \begin{spacing}{0.9}
@@ -451,20 +484,15 @@ $$\sigma_X = \sqrt{var_X}$$
 
 
 Variance et écart-type sont sensibles aux valeurs extrêmes et toujours positifs.\\
+\vspace{0.5cm}
 
-
-
-
-
-\begin{tiny}
-\begin{spacing}{0.8}
+\begin{scriptsize}
+\begin{spacing}{1}
 Si $var_X = 0$ ou $\sigma_X = 0$ , alors $X$ est \alert{constante}.\\
+
 Un écart-type faible indique que les valeurs sont réparties de façon \alert{homogène} autour de la moyenne.
 \end{spacing}
-\end{tiny}
-
-
-
+\end{scriptsize}
 \end{frame}
 
 
@@ -644,12 +672,14 @@ $$ C_1 = \frac{\bar{x} - mode(X)}{\sigma_x}$$
 
 $$ C_2 = \frac{3(\bar{x} - mediane(X))}{\sigma_x}$$
 
+
+\begin{scriptsize}
 \begin{itemize}
   \item coefficient \alert{nul} :  la distribution est \alert{symétrique}
   \item coefficient \alert{négatif} : la distribution est \alert{déformée à gauche} de la médiane (sur-représentation de valeurs faibles, à gauche)
   \item coefficient \alert{positif} :  la distribution est \alert{déformée à droite} de la médiane (sur-représentation de valeurs fortes, à droite)
 \end{itemize}
-
+\end{scriptsize}
 
 \end{frame}
 
@@ -679,9 +709,9 @@ Interprétation similaire aux coefficients de Pearson
 \includegraphics[width=\linewidth]{img/aplatissement.png}
 \end{center}
 
-Courbe piquée: Peu de variation, distribution relativement homogène, beaucoup de valeurs égales ou proches de la moyenne.
+\alert{Courbe piquée}: Peu de variation, distribution relativement homogène, beaucoup de valeurs égales ou proches de la moyenne.
 
-Courbe aplatie: Variations importantes, distribution relativement hétérogène, beaucoup de valeurs s’éloignent de la moyenne.
+\alert{Courbe aplatie}: Variations importantes, distribution relativement hétérogène, beaucoup de valeurs s’éloignent de la moyenne.
 
 \end{frame}
 
@@ -701,6 +731,22 @@ Si $K>3$, la distribution est \alert{plus aplatie}
 Si $K<3$, la distribution est \alert{moins aplatie} 
 
 On normalise parfois en considérant $K'=K-3$ (quantifie l'excès d'aplatissement)
+
+
+\end{frame}
+
+
+
+\begin{frame}{Bilan}
+
+Pour décrire une distribution : 
+
+\begin{itemize}
+\item Tendance centrale 
+\item Dispersion
+\item Asymétrie  
+\item Aplatissement
+\end{itemize}
 
 
 \end{frame}

@@ -24,10 +24,10 @@ histo_mass
 
 dens_mass <- ggplot(mydata)+
   geom_density(aes(x=body_mass_g), fill="darkorchid4", color="darkgray", alpha=0.8)+
-  labs(title = "Penguins Body Mass", subtitle = "Histogram (50 bins)")+
-  ylab("Count")+theme_light()
+  labs(title = "Penguins Body Mass", subtitle = "Distribution")+
+  theme_light()
 dens_mass
-#ggsave("~/coursDESIGEO/cours_stats_DESIGEO/Univariee_Bivariee/img/densité.png", device= "png",width = 800 , height = 400, units = "px", dpi=100)
+ggsave("~/coursDESIGEO/cours_stats_DESIGEO/Univariee_Bivariee/img/densité.png", device= "png",width = 800 , height = 400, units = "px", dpi=100)
 
 
 
