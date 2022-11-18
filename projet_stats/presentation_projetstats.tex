@@ -1,0 +1,150 @@
+\documentclass{beamer}
+\usepackage{mathrsfs}  
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{comment}
+
+% config du thgeme metropolis
+\usetheme[progressbar=frametitle,block=fill, titleformat=smallcaps,sectionpage=progressbar,]{metropolis}
+
+
+
+\title{Projets Probabilités, Statistiques, Analyse Spatiale}
+\subtitle{}
+\date{2021-2022}
+\author{Paul Chapron \textsuperscript{1} \& Yann Ménéroux \textsuperscript{1} \& Juste Rimbault \textsuperscript{1}}
+\institute{ \textsuperscript{1}IGN-ENSG-UGE}
+
+
+
+%definition de la couleur du texte dans la balise \alert{}
+\definecolor{vertIGN}{HTML}{96C31E} % vert IGN %vrai valeur #97BE0D
+\setbeamercolor{alerted text}{fg=vertIGN}
+
+\definecolor{grisIGN}{HTML}{22292F} % Gris IGN tiré vers le noir 
+\setbeamercolor{background canvas}{bg=grisIGN}
+
+
+
+
+% code pour placer le log ENSG dans le bandeau de titre 
+\makeatletter
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \begin{beamercolorbox}[%
+      wd=\paperwidth,%
+      sep=0pt,%
+      leftskip=\metropolis@frametitle@padding,%
+      rightskip=\metropolis@frametitle@padding,%
+    ]{frametitle}%
+  \metropolis@frametitlestrut@start%
+  \insertframetitle%
+  \nolinebreak%
+  \metropolis@frametitlestrut@end%
+  \hfill
+  \raisebox{-0.6ex}{\includegraphics[height=4ex,keepaspectratio]{img/logoENSG_small.jpg}}
+  \end{beamercolorbox}%
+}
+\makeatother
+
+
+
+
+% logo ENSG première page 
+\titlegraphic{\vspace{4cm}\flushright\includegraphics[width=2cm,height=2cm]{img/logoENSG_big.png}} 
+
+
+
+\begin{document}
+\metroset{background=dark} % change background theme according to manual
+\maketitle
+
+\begin{frame}{Dans les cours précédents ... }
+
+\begin{itemize}
+  \item Statistiques / Géostatistiques 
+  \item Probabilités 
+  \item Analyse spatiale 
+  \item Manipulations avec R 
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{L'idée du projet}
+
+Mobiliser un mélange des compétences et connaissances acquises pour \alert{répondre à une question} sur des données spatiales, en groupe.
+
+
+
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{Contraintes}
+$\rightarrow $ Groupes de 3 étudiant·e·s max \\ 
+\vspace{1cm}
+
+$\rightarrow $ Rapport de 10 pages max\\
+\vspace{1cm}
+
+$\rightarrow $ Soutenance de 15 minutes, tout le monde parle, 16 décembre après-midi, amphi Picard 
+
+\end{frame}
+
+\begin{frame}{Données idéales}
+
+\begin{itemize}
+\item spatialisées (ou spatialisables)
+\item quantitatives (au moins deux ou trois! )
+\item multiples (nombre de variables distinctes)
+\item nombreuses (nombre d'individus de la population)
+\item ouvertes 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Exemples : Projets passés}
+\begin{small}
+Comment établir un profil de communes canadiennes à partir du temps de trajet domicile-travail des habitants ? 
+
+
+
+Quels sont les facteurs qui influencent le nombre d’infractions recensées par les forces de l’ordre ?
+
+Peut-on expliquer le taux de suicide d'un pays à l'aide de données socio-économiques ? 
+
+Quels sont les facteurs qui font d'un film un film à succès ? 
+
+Estimation et prédiction spatio-temporelle de la consommation électrique à Paris
+de 2018 à 2025.
+
+
+Classements internationaux  des écoles supérieurs : Constitution, évolution et taux d’emploi des diplomés.
+\end{small}
+
+\end{frame}
+
+
+
+\begin{comment}
+\begin{frame}{Animation}
+  \begin{itemize}[<+- | alert@+>]
+    \item \alert<4>{This is\only<4>{ really} important}
+    \item Now this
+    \item And now this
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[standout]
+Mono message sur une diapo
+\end{frame}
+\end{comment}
+
+\end{document}

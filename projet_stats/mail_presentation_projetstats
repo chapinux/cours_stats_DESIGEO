@@ -1,0 +1,53 @@
+Bonjour à tou·te·s
+
+le projet de statistiques approche, nous vous écrivons ce mail pour préparer sa mise en place.
+
+Dans la mesure du possible, nous souhaitons que les sujets viennent de vous et nous n'imposerons pas de thématiques ni de données.
+
+D'ici le XXXXX, commencez à réfléchir aux sujets/thèmes que vous aimeriez aborder, avec qui vous aimeriez le traiter,  et au données disponibles pour supporter votre analyse.
+
+Quelques contraintes sont à respecter :
+
+- Groupes de 3 personnes maximum
+- Validation de vos sujets par Juste, Yann et moi
+- Rapport/synthèse de 10 pages maximum (hors annexes) explicitant la question  explorée, décrivant les méthodes choisies et leurs résultats
+- Soutenance orale de 15 minutes pour restituer les résultats
+
+
+ Dans votre emploi du temps, des créneaux sont dévolus à ce projet :
+le XXX  : mise en place et validation des sujets
+Les XXX  sont consacrés à avancer sur le projet . La séance du XXXX en particulier est consacrée aux dernières questions à éclaircir avec nous.
+
+Les soutenances auront lieu le XXXX
+
+
+Pour que les projets soient intéressants, nous vous suggérons de vous pencher sur des données qui soient :
+
+- spatialisées
+- quantitatives (au moins deux ou trois! )
+- multiples (nombre de variables distinctes)
+- nombreuses (nombre d'individus de la population)
+
+De même, nous vous suggérons d'explorer des questions "tenables" dans la période de temps imparti: le temps passe vite quand on fait des statistiques !
+
+À titre d'exemple, voici quelques sites qui proposent des données riches, et sur lesquelles on peut se poser beaucoup de questions !
+
+trajets du vélib newyorkais :
+https://ride.citibikenyc.com/system-data
+
+Recensement et données socio économiques du Canada :
+https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/index-eng.cfm
+un exemple d'interrogation avec R ici : https://www.mytinyshinys.com/2017/09/13/canadian-census/
+
+Prix et localisation  des chambres air B'nB  :
+http://insideairbnb.com/get-the-data.html
+
+
+Données sur le sport :
+https://www.sports-reference.com/
+
+Enfin de nombreux jeux de données sont disponibles sur https://www.kaggle.com/datasets?search=spatial
+
+
+Yann, Juste et Paul
+Projet de statistiques filière Data Science  / DESIGEO 
