@@ -1160,26 +1160,6 @@ En pratique , les formes sont beaucoup moins régulières.
 
 
 
-\begin{frame}{Les étapes}
-
-\begin{enumerate}
-  \item Tracer le nuage de points
-  \item Existe-t-il une relation ? 
-  \item Si oui , Est-elle de forme linéaire ? 
-  \begin{enumerate}
-  \item Si oui  $\rightarrow$ faire une \alert{régression linéaire} 
-   \item Si non, la liaison est-elle monotone ou de forme connue ?
-   \begin{enumerate}
-   \item Si oui $\rightarrow$  Proposer un \alert{modèle} e.g. polynomial
-   \item Alternative: Réaliser un modèle \alert{LOESS} avec prudence (uniquement descriptif , aucun pouvoir de généralisation) cf le blog de Lise Vaudor \url{http://perso.ens-lyon.fr/lise.vaudor/regression-loess/}
-\end{enumerate}
-\end{enumerate}
-\end{enumerate}
-
-
-\end{frame}
-
-
 
 \begin{frame}[fragile]{Réaliser une régression linéaire}
 
@@ -1292,7 +1272,7 @@ Il faut réunir deux conditions :
 
 \begin{itemize}
 \item des coefficients avec des \alert{p-values} associées \alert{faibles} (e.g. <0.05)  $\leftrightarrow$ «on a peu de chances de se tromper»
-\item un $R^2$ élevé  $\leftrightarrow$ «le modèle prédit bien les observations»
+\item un \alert{$R^2$} élevé  $\leftrightarrow$ «le modèle prédit bien les observations»
 \end{itemize}
 
 
@@ -1306,7 +1286,7 @@ Le \alert{coefficient de détermination linéaire} ,  noté $R^2$   décrit la \
 
 
 Il est défini par : 
- $$R^2  = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y})^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}$$
+ $$R^2  = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y_i})^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}$$
 
 
 \begin{itemize}
@@ -1335,9 +1315,9 @@ $$R^2 \approx 1- (erreur\ commise\ normalisee\ par\ la\ variation\ de\ la\ varia
 également :
 
 $$R^2  =  \frac{\sum_{i=1}^{n} (\hat{y_i} -\bar{y} )^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}$$
-
-«la variation expliquée  sur la variation totale»
-
+\begin{scriptsize}
+«la variation expliquée (numérateur)  sur la variation totale (dénominateur)»
+\end{scriptsize}
 
 \end{frame}
 
@@ -1431,6 +1411,30 @@ Quand "tout se passe bien" , les \alert{résidus} $\epsilon_i$  doivent:
 
  
 \end{frame}
+
+
+
+
+
+\begin{frame}{Les étapes}
+
+\begin{enumerate}
+  \item Tracer le nuage de points
+  \item Existe-t-il une relation ? 
+  \item Si oui , Est-elle de forme linéaire ? 
+  \begin{enumerate}
+  \item Si oui  $\rightarrow$ faire une \alert{régression linéaire} 
+   \item Si non, la liaison est-elle monotone ou de forme connue ?
+   \begin{enumerate}
+   \item Si oui $\rightarrow$  Proposer un \alert{modèle} e.g. polynomial
+   \item Alternative: Réaliser un modèle \alert{LOESS} avec prudence (uniquement descriptif , aucun pouvoir de généralisation) cf le blog de Lise Vaudor \url{http://perso.ens-lyon.fr/lise.vaudor/regression-loess/}
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+
+
+\end{frame}
+
 
 
 
